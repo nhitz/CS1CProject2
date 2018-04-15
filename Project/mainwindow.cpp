@@ -17,16 +17,16 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_customerLoginButton_clicked()
 {
-  DialogCustomer customerWindow;
+    DialogCustomer customerWindow;
 
-  customerWindow.setModal(true);
-  customerWindow.exec();
+    customerWindow.setModal(true);
+    customerWindow.exec();
 }
 
 void MainWindow::on_adminLoginButton_clicked()
 {
-  DialogAdmin myAdmin;
+    DialogAdmin myAdmin;
 
-  myAdmin.setModal(true);
-  myAdmin.exec();
+    myAdmin.setModal(true);
+    myAdmin.exec();
 }

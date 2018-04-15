@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -27,12 +27,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     dialogcustomer.cpp \
-    dialogadmin.cpp
+    dialogadmin.cpp \
+    dbmanager.cpp
 
 HEADERS += \
         mainwindow.h \
     dialogcustomer.h \
-    dialogadmin.h
+    dialogadmin.h \
+    dbmanager.h
 
 FORMS += \
         mainwindow.ui \
