@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-04-09T15:17:29
+# Project created by QtCreator 2018-04-15T15:28:47
 #
 #-------------------------------------------------
 
@@ -12,7 +12,7 @@ TARGET = project
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
-# any feature of Qt which as been marked as deprecated (the exact warnings
+# any feature of Qt which has been marked as deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
@@ -23,11 +23,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp
+SOURCES += \
+        main.cpp \
+        mainwindow.cpp \
+    dialogcustomer.cpp \
+    dialogadmin.cpp
 
-HEADERS  += mainwindow.h
+HEADERS += \
+        mainwindow.h \
+    dialogcustomer.h \
+    dialogadmin.h
 
-FORMS    += mainwindow.ui
-
-DISTFILES +=
+FORMS += \
+        mainwindow.ui \
+    dialogcustomer.ui \
+    dialogadmin.ui

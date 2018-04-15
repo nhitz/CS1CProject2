@@ -4,22 +4,23 @@
 #include <QMainWindow>
 
 namespace Ui {
-class MainWindow;
+  class MainWindow;
 }
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+  explicit MainWindow(QWidget *parent = 0);
+  ~MainWindow();
 
 private slots:
-    void on_comboBox_activated(const QString &arg1);
+  void on_customerLoginButton_clicked();
+  void on_adminLoginButton_clicked();
 
 private:
-    Ui::MainWindow *ui;
+  Ui::MainWindow *ui;
 };
 
 #endif // MAINWINDOW_H

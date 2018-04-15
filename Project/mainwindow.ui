@@ -90,7 +90,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>429</x>
@@ -108,14 +108,14 @@
       </widget>
      </item>
      <item>
-      <widget class="QCommandLinkButton" name="commandLinkButton_3">
+      <widget class="QCommandLinkButton" name="customerLoginButton">
        <property name="text">
         <string>Customer Login</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QCommandLinkButton" name="commandLinkButton">
+      <widget class="QCommandLinkButton" name="adminLoginButton">
        <property name="text">
         <string>Administrator Login</string>
        </property>

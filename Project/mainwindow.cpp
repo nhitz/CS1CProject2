@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "dialogcustomer.h"
+#include "dialogadmin.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -13,7 +15,18 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_comboBox_activated(const QString &arg1)
+void MainWindow::on_customerLoginButton_clicked()
 {
+  DialogCustomer customerWindow;
 
+  customerWindow.setModal(true);
+  customerWindow.exec();
+}
+
+void MainWindow::on_adminLoginButton_clicked()
+{
+  DialogAdmin myAdmin;
+
+  myAdmin.setModal(true);
+  myAdmin.exec();
 }

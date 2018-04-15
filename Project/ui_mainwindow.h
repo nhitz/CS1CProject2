@@ -34,8 +34,8 @@ public:
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QCommandLinkButton *commandLinkButton_2;
-    QCommandLinkButton *commandLinkButton_3;
-    QCommandLinkButton *AdminLogin;
+    QCommandLinkButton *customerLoginButton;
+    QCommandLinkButton *adminLoginButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -89,15 +89,15 @@ public:
 
         horizontalLayout->addWidget(commandLinkButton_2);
 
-        commandLinkButton_3 = new QCommandLinkButton(layoutWidget);
-        commandLinkButton_3->setObjectName(QStringLiteral("commandLinkButton_3"));
+        customerLoginButton = new QCommandLinkButton(layoutWidget);
+        customerLoginButton->setObjectName(QStringLiteral("customerLoginButton"));
 
-        horizontalLayout->addWidget(commandLinkButton_3);
+        horizontalLayout->addWidget(customerLoginButton);
 
-        AdminLogin = new QCommandLinkButton(layoutWidget);
-        AdminLogin->setObjectName(QStringLiteral("AdminLogin"));
+        adminLoginButton = new QCommandLinkButton(layoutWidget);
+        adminLoginButton->setObjectName(QStringLiteral("adminLoginButton"));
 
-        horizontalLayout->addWidget(AdminLogin);
+        horizontalLayout->addWidget(adminLoginButton);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -123,8 +123,8 @@ public:
         label_2->setText(QApplication::translate("MainWindow", "Your Protection Is Our Success", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "About Us", nullptr));
         commandLinkButton_2->setText(QApplication::translate("MainWindow", "Help", nullptr));
-        commandLinkButton_3->setText(QApplication::translate("MainWindow", "Customer Login", nullptr));
-        AdminLogin->setText(QApplication::translate("MainWindow", "Administrator Login", nullptr));
+        customerLoginButton->setText(QApplication::translate("MainWindow", "Customer Login", nullptr));
+        adminLoginButton->setText(QApplication::translate("MainWindow", "Administrator Login", nullptr));
     } // retranslateUi
 
 };
