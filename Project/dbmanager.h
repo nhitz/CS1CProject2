@@ -8,6 +8,8 @@
 #include <QtSql>
 #include <QString>
 #include <string>
+#include <QObject>
+#include <QFile>
 
 using namespace std;
 
@@ -28,6 +30,11 @@ public:
     dbManager(const dbManager&) = delete;
     void operator=(const dbManager&) = delete;
 
+    // Connection Test
+    bool isOpen() const;
+
+    // Login Test
+    bool validateUser(QString user, QString pass);
 };
 
 #endif // DBMANAGER_H

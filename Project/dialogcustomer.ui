@@ -61,7 +61,11 @@
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QLineEdit" name="CustomerPasswordEdit"/>
+     <widget class="QLineEdit" name="CustomerPasswordEdit">
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+     </widget>
     </item>
     <item row="2" column="1">
      <widget class="QPushButton" name="CustomerLoginButton">
@@ -72,7 +76,23 @@
     </item>
    </layout>
   </widget>
+  <widget class="QLabel" name="labelStatus">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>240</y>
+     <width>161</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>[+]Status</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
+ <slots>
+  <slot>authenticate()</slot>
+ </slots>
 </ui>

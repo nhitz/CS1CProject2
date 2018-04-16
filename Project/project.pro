@@ -28,15 +28,18 @@ SOURCES += \
         mainwindow.cpp \
     dialogcustomer.cpp \
     dialogadmin.cpp \
-    dbmanager.cpp
+    dbmanager.cpp \
+    customerwindow.cpp
 
 HEADERS += \
         mainwindow.h \
     dialogcustomer.h \
     dialogadmin.h \
-    dbmanager.h
+    dbmanager.h \
+    customerwindow.h
 
 FORMS += \
         mainwindow.ui \
     dialogcustomer.ui \
-    dialogadmin.ui
+    dialogadmin.ui \
+    customerwindow.ui
