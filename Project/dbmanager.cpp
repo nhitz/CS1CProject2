@@ -43,7 +43,7 @@ bool dbManager::isOpen() const
     return iCybSecdb.isOpen();
 }
 
-bool validateUser(QString usern, QString passw)
+bool dbManager::validateUser(QString usern, QString passw)
 {
     QSqlQuery query;
     bool success;
