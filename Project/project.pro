@@ -43,3 +43,5 @@ FORMS += \
     dialogcustomer.ui \
     dialogadmin.ui \
     customerwindow.ui
+
+RESOURCES = icybersec.qrc
