@@ -76,7 +76,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QLabel" name="labelStatus">
+  <widget class="QLabel" name="statusLabel">
    <property name="geometry">
     <rect>
      <x>110</x>

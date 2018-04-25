@@ -10,11 +10,11 @@ DialogCustomer::DialogCustomer(QWidget *parent) :
 
     if(!dbManager::instance().isOpen())
     {
-        ui->labelStatus->setText("Failed to connect to database");
+        ui->statusLabel->setText("Failed to connect to database");
     }
     else
     {
-        ui->labelStatus->setText("Enter credentials");
+        ui->statusLabel->setText("Enter credentials");
     }
 }
 
@@ -27,14 +27,13 @@ void DialogCustomer::on_CustomerLoginButton_clicked()
 {
     CustomerWindow customerWin;
 
-    //if(dbManager::instance().validateUser(ui->CustomerUsernameEdit->text(), ui->CustomerPasswordEdit->text()))
-    if(ui->CustomerUsernameEdit->text() == "sandun" && ui->CustomerPasswordEdit->text() == "1234")
+    if(dbManager::instance().validateUser(ui->CustomerUsernameEdit->text(), ui->CustomerPasswordEdit->text()))
     {
-        ui->labelStatus->setText("Login accepted");
+        ui->statusLabel->setText("Login accepted");
         customerWin.setModal(true);
         customerWin.exec();
     }
     else
-        ui->labelStatus->setText("Invalid username or password");
+        ui->statusLabel->setText("Invalid username or password");
 }
 

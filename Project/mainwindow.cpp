@@ -9,6 +9,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     dbManager::instance();
+
+    QPixmap pix(":ICyberSecurityPamphlet.jpg");
+    ui->test1->setPixmap(pix.scaled(500,500,Qt::KeepAspectRatio));
+    QPixmap pic(":ICyberSecurityPamphlet-2.jpg");
+    ui->test2->setPixmap(pic.scaled(500,500,Qt::KeepAspectRatio));
 }
 
 MainWindow::~MainWindow()
