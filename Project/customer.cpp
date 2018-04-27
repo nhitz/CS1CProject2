@@ -1,6 +1,6 @@
 #include "customer.h"
 
-Customer::Customer(QString customer_name, QString customer_street, QString customer_city_state_zip, QString customer_interest, bool customer_key);
+Customer::Customer(QString customer_name, QString customer_street, QString customer_city_state_zip, QString customer_interest, bool customer_key)
 {
     name           = customer_name;
     streetname     = customer_street;
