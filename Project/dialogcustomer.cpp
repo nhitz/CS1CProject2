@@ -6,7 +6,6 @@ DialogCustomer::DialogCustomer(QWidget *parent) :
     ui(new Ui::DialogCustomer)
 {
     ui->setupUi(this);
-    //dbManager::instance();
 
     if(!dbManager::instance().isOpen())
     {
@@ -27,7 +26,7 @@ void DialogCustomer::on_CustomerLoginButton_clicked()
 {
     CustomerWindow customerWin;
 
-    if(dbManager::instance().validateUser(ui->CustomerUsernameEdit->text(), ui->CustomerPasswordEdit->text()))
+    if(dbManager::instance().validateCustomer(ui->CustomerUsernameEdit->text(), ui->CustomerPasswordEdit->text()))
     {
         ui->statusLabel->setText("Login accepted");
         customerWin.setModal(true);

@@ -29,19 +29,22 @@ SOURCES += \
     dialogcustomer.cpp \
     dialogadmin.cpp \
     dbmanager.cpp \
-    customerwindow.cpp
+    customerwindow.cpp \
+    adminwindow.cpp
 
 HEADERS += \
         mainwindow.h \
     dialogcustomer.h \
     dialogadmin.h \
     dbmanager.h \
-    customerwindow.h
+    customerwindow.h \
+    adminwindow.h
 
 FORMS += \
         mainwindow.ui \
     dialogcustomer.ui \
     dialogadmin.ui \
-    customerwindow.ui
+    customerwindow.ui \
+    adminwindow.ui
 
 RESOURCES = icybersec.qrc

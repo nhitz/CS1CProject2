@@ -43,13 +43,38 @@ bool dbManager::isOpen() const
     return iCybSecdb.isOpen();
 }
 
-bool dbManager::validateUser(QString usern, QString passw)
+bool dbManager::validateAdmin(QString usern, QString passw)
 {
     QSqlQuery query;
     bool success;
     success = false;
 
-    query.prepare("SELECT username, password FROM credentials WHERE username = :user AND password = :pass");
+    query.prepare("SELECT username password FROM admin_credentials WHERE username = :user AND password = :pass");
+    query.bindValue(":user", usern);
+    query.bindValue(":pass", passw);
+
+    if(query.exec())
+    {
+          if(query.next())
+          {
+                success = true;
+          }
+    }
+    else
+    {
+         qDebug() << "Login Error: " << query.lastError();
+    }
+
+    return success;
+}
+
+bool dbManager::validateCustomer(QString usern, QString passw)
+{
+    QSqlQuery query;
+    bool success;
+    success = false;
+
+    query.prepare("SELECT username password FROM customer_credentials WHERE username = :user AND password = :pass");
     query.bindValue(":user", usern);
     query.bindValue(":pass", passw);
 

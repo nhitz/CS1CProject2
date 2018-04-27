@@ -34,7 +34,8 @@ public:
     bool isOpen() const;
 
     // Login Test
-    bool validateUser(QString user, QString pass);
+    bool validateAdmin(QString user, QString pass);
+    bool validateCustomer(QString user, QString pass);
 };
 
 #endif // DBMANAGER_H

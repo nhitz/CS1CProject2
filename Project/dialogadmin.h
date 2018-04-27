@@ -2,6 +2,7 @@
 #define DIALOGADMIN_H
 
 #include <QDialog>
+#include <dbmanager.h>
 
 namespace Ui {
 class DialogAdmin;
@@ -14,6 +15,9 @@ class DialogAdmin : public QDialog
 public:
     explicit DialogAdmin(QWidget *parent = 0);
     ~DialogAdmin();
+
+private slots:
+    void on_AdminLoginButton_clicked();
 
 private:
     Ui::DialogAdmin *ui;
