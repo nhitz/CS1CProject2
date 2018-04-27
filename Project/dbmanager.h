@@ -10,6 +10,7 @@
 #include <string>
 #include <QObject>
 #include <QFile>
+#include "customer.h"
 
 using namespace std;
 

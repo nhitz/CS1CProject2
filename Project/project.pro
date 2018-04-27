@@ -30,7 +30,8 @@ SOURCES += \
     dialogadmin.cpp \
     dbmanager.cpp \
     customerwindow.cpp \
-    adminwindow.cpp
+    adminwindow.cpp \
+    customer.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -38,7 +39,8 @@ HEADERS += \
     dialogadmin.h \
     dbmanager.h \
     customerwindow.h \
-    adminwindow.h
+    adminwindow.h \
+    customer.h
 
 FORMS += \
         mainwindow.ui \
