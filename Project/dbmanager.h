@@ -48,6 +48,7 @@ public:
     QString getCustomerCityStateZip(QString customerName);
     QString getCustomerInterest(QString customerName);
     QString getCustomerKey(QString customerName);
+    bool removeCustomer(QString customerName);
 
     // Populate database from file
     bool populateCustomers();

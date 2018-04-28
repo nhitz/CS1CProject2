@@ -260,6 +260,26 @@ QString dbManager::getCustomerKey(QString customerName)
   return customerKey;
 }
 
+bool dbManager::removeCustomer(QString customerName)
+{
+    QString customer_name = customerName;
+    bool success;
+    QSqlQuery deleteQuery;
+    success = false;
+
+    deleteQuery.prepare("DELETE FROM customer_list WHERE name = '"+customer_name+"'");
+    if(deleteQuery.exec())
+    {
+        success = true;
+    }
+    else
+    {
+        qDebug() << "Remove customer Error: " << deleteQuery.lastError();
+    }
+
+    return success;
+}
+
 bool dbManager::populateCustomers()
 {
     bool success;

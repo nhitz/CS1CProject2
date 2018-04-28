@@ -9,7 +9,14 @@ adminwindow::adminwindow(QWidget *parent) :
 
     customerNames = dbManager::instance().getCustomerNames();
     ui->listWidget->addItems(customerNames);
+    ui->labelTotalCustomersNumber->setText(QString("%1").arg(ui->listWidget->count()));
+}
 
+void adminwindow::updateCustomerList()
+{
+    ui->listWidget->clear();
+    customerNames = dbManager::instance().getCustomerNames();
+    ui->listWidget->addItems(customerNames);
     ui->labelTotalCustomersNumber->setText(QString("%1").arg(ui->listWidget->count()));
 }
 
@@ -24,6 +31,7 @@ void adminwindow::on_AddButton_clicked()
   addCustomerWin = new addcustomerwindow(this);
   addCustomerWin->setModal(true);
   addCustomerWin->exec();
+  updateCustomerList();
   delete addCustomerWin;
 }
 
@@ -43,4 +51,13 @@ void adminwindow::on_listWidget_itemClicked(QListWidgetItem *item)
 
     QString key = dbManager::instance().getCustomerKey(item->text());
     ui->selectedCustomerKey->setText(key);
+}
+
+void adminwindow::on_DeleteButton_clicked()
+{
+    if(dbManager::instance().removeCustomer(ui->listWidget->currentItem()->text()))
+    {
+        qDebug() << "Deleted customer";
+        updateCustomerList();
+    }
 }

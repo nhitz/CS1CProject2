@@ -19,9 +19,10 @@ public:
     ~adminwindow();
 
 private slots:
+  void updateCustomerList();
   void on_AddButton_clicked();
-
   void on_listWidget_itemClicked(QListWidgetItem *item);
+  void on_DeleteButton_clicked();
 
 private:
     Ui::adminwindow *ui;

@@ -35,6 +35,7 @@ void addcustomerwindow::on_okButton_clicked()
     {
         ui->outputLabel->setText("Failed To Add Customer'");
     }
+    close();
 }
 
 void addcustomerwindow::on_cancelButton_clicked()
