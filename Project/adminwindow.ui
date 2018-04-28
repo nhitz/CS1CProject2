@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>860</width>
-    <height>583</height>
+    <width>720</width>
+    <height>494</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,10 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>380</x>
+     <x>350</x>
      <y>20</y>
-     <width>101</width>
-     <height>21</height>
+     <width>87</width>
+     <height>18</height>
     </rect>
    </property>
    <property name="font">
@@ -33,325 +33,160 @@
     <string>Admin Page</string>
    </property>
   </widget>
-  <widget class="QTableWidget" name="tableWidget">
+  <widget class="QLabel" name="labelTotalCustomers">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>80</y>
-     <width>561</width>
-     <height>261</height>
-    </rect>
-   </property>
-   <property name="rowCount">
-    <number>10</number>
-   </property>
-   <property name="columnCount">
-    <number>5</number>
-   </property>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <row/>
-   <column/>
-   <column/>
-   <column/>
-   <column/>
-   <column/>
-   <item row="0" column="0">
-    <property name="text">
-     <string>Name</string>
-    </property>
-   </item>
-   <item row="0" column="1">
-    <property name="text">
-     <string>Address</string>
-    </property>
-   </item>
-   <item row="0" column="2">
-    <property name="text">
-     <string>City/Zipcode</string>
-    </property>
-   </item>
-   <item row="0" column="3">
-    <property name="text">
-     <string>Interest</string>
-    </property>
-   </item>
-   <item row="0" column="4">
-    <property name="text">
-     <string>Cutomer Rating</string>
-    </property>
-   </item>
-   <item row="1" column="0">
-    <property name="text">
-     <string>Orange County Airport</string>
-    </property>
-   </item>
-   <item row="1" column="1">
-    <property name="text">
-     <string>18601 Airport Way</string>
-    </property>
-   </item>
-   <item row="1" column="2">
-    <property name="text">
-     <string>Santa Ana, CA 92707</string>
-    </property>
-   </item>
-   <item row="1" column="3">
-    <property name="text">
-     <string>very interested</string>
-    </property>
-   </item>
-   <item row="1" column="4">
-    <property name="text">
-     <string>key</string>
-    </property>
-   </item>
-   <item row="2" column="0">
-    <property name="text">
-     <string>Los Angeles Airport</string>
-    </property>
-   </item>
-   <item row="2" column="1">
-    <property name="text">
-     <string>1 World Way</string>
-    </property>
-   </item>
-   <item row="2" column="2">
-    <property name="text">
-     <string>Los Angeles, CA 90045</string>
-    </property>
-   </item>
-   <item row="2" column="3">
-    <property name="text">
-     <string>very interested</string>
-    </property>
-   </item>
-   <item row="2" column="4">
-    <property name="text">
-     <string>key</string>
-    </property>
-   </item>
-   <item row="3" column="0">
-    <property name="text">
-     <string>FBI</string>
-    </property>
-   </item>
-   <item row="3" column="1">
-    <property name="text">
-     <string>1234 Lincoln Ave.</string>
-    </property>
-   </item>
-   <item row="3" column="2">
-    <property name="text">
-     <string>Washington D.C. 00234</string>
-    </property>
-   </item>
-   <item row="3" column="3">
-    <property name="text">
-     <string>somewhat interested</string>
-    </property>
-   </item>
-   <item row="3" column="4">
-    <property name="text">
-     <string>key</string>
-    </property>
-   </item>
-   <item row="4" column="0">
-    <property name="text">
-     <string>CIA</string>
-    </property>
-   </item>
-   <item row="4" column="1">
-    <property name="text">
-     <string>987 Jefferson Blvd</string>
-    </property>
-   </item>
-   <item row="4" column="2">
-    <property name="text">
-     <string>Baltimore, MD 00754</string>
-    </property>
-   </item>
-   <item row="4" column="3">
-    <property name="text">
-     <string>not interested</string>
-    </property>
-   </item>
-   <item row="4" column="4">
-    <property name="text">
-     <string>key</string>
-    </property>
-   </item>
-   <item row="5" column="0">
-    <property name="text">
-     <string>Saddleback College</string>
-    </property>
-   </item>
-   <item row="5" column="1">
-    <property name="text">
-     <string>28000 Marguerite Pkwy</string>
-    </property>
-   </item>
-   <item row="5" column="2">
-    <property name="text">
-     <string>Mission Viejo, CA 92692</string>
-    </property>
-   </item>
-   <item row="5" column="3">
-    <property name="text">
-     <string>somewhat interested</string>
-    </property>
-   </item>
-   <item row="5" column="4">
-    <property name="text">
-     <string>nice to have</string>
-    </property>
-   </item>
-   <item row="6" column="0">
-    <property name="text">
-     <string>Los Angeles Dodgers</string>
-    </property>
-   </item>
-   <item row="6" column="1">
-    <property name="text">
-     <string>1000 Elysian Park Avenue</string>
-    </property>
-   </item>
-   <item row="6" column="2">
-    <property name="text">
-     <string>Los Angeles, CA 9 0012</string>
-    </property>
-   </item>
-   <item row="6" column="3">
-    <property name="text">
-     <string>very interested</string>
-    </property>
-   </item>
-   <item row="6" column="4">
-    <property name="text">
-     <string>nice to have</string>
-    </property>
-   </item>
-   <item row="7" column="0">
-    <property name="text">
-     <string>Los Angeles Angels of Anaheim</string>
-    </property>
-   </item>
-   <item row="7" column="1">
-    <property name="text">
-     <string>2000 East Gene Autry Way</string>
-    </property>
-   </item>
-   <item row="7" column="2">
-    <property name="text">
-     <string>Anaheim, CA 92806</string>
-    </property>
-   </item>
-   <item row="7" column="3">
-    <property name="text">
-     <string>very interested</string>
-    </property>
-   </item>
-   <item row="7" column="4">
-    <property name="text">
-     <string>key</string>
-    </property>
-   </item>
-   <item row="8" column="0">
-    <property name="text">
-     <string>Amazon</string>
-    </property>
-   </item>
-   <item row="8" column="1">
-    <property name="text">
-     <string>410 Terry Ave. North</string>
-    </property>
-   </item>
-   <item row="8" column="2">
-    <property name="text">
-     <string>Seattle, WA 98109</string>
-    </property>
-   </item>
-   <item row="8" column="3">
-    <property name="text">
-     <string>somewhat interested</string>
-    </property>
-   </item>
-   <item row="8" column="4">
-    <property name="text">
-     <string>nice to have</string>
-    </property>
-   </item>
-   <item row="9" column="0">
-    <property name="text">
-     <string>Cisco</string>
-    </property>
-   </item>
-   <item row="9" column="1">
-    <property name="text">
-     <string>170 West Tasman Dr.</string>
-    </property>
-   </item>
-   <item row="9" column="2">
-    <property name="text">
-     <string>San Jose, CA 9513</string>
-    </property>
-   </item>
-   <item row="9" column="3">
-    <property name="text">
-     <string>very interested</string>
-    </property>
-   </item>
-   <item row="9" column="4">
-    <property name="text">
-     <string>key</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QPushButton" name="DeleteButton">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>360</y>
-     <width>75</width>
-     <height>23</height>
+     <x>51</x>
+     <y>439</y>
+     <width>82</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>Delete</string>
+    <string>Total Customers:</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="AddButton">
+  <widget class="QLabel" name="labelTotalCustomersNumber">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>360</y>
-     <width>75</width>
-     <height>23</height>
+     <x>150</x>
+     <y>440</y>
+     <width>201</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>Add</string>
+    <string>0</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="UpdateButton">
+  <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>360</y>
-     <width>75</width>
-     <height>23</height>
+     <x>51</x>
+     <y>121</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>90</y>
+     <width>141</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>Update</string>
+    <string>Customer's Info:</string>
    </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>51</x>
+     <y>93</y>
+     <width>169</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Filter:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="txtFilter"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>51</x>
+     <y>406</y>
+     <width>241</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QPushButton" name="UpdateButton">
+      <property name="text">
+       <string>Update</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="AddButton">
+      <property name="text">
+       <string>Add</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="DeleteButton">
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>120</y>
+     <width>251</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="3" column="0">
+     <widget class="QLabel" name="selectedCustomerInterest">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="selectedCustomerStreetname">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="selectedCustomerCityStateZip">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="selectedCustomerKey">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="selectedCustomerName">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

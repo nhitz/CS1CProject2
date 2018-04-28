@@ -31,7 +31,8 @@ SOURCES += \
     dbmanager.cpp \
     customerwindow.cpp \
     adminwindow.cpp \
-    customer.cpp
+    customer.cpp \
+    addcustomerwindow.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -40,13 +41,15 @@ HEADERS += \
     dbmanager.h \
     customerwindow.h \
     adminwindow.h \
-    customer.h
+    customer.h \
+    addcustomerwindow.h
 
 FORMS += \
         mainwindow.ui \
     dialogcustomer.ui \
     dialogadmin.ui \
     customerwindow.ui \
-    adminwindow.ui
+    adminwindow.ui \
+    addcustomerwindow.ui
 
 RESOURCES = icybersec.qrc

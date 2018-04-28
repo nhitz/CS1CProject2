@@ -11,6 +11,7 @@
 #include <QObject>
 #include <QFile>
 #include <fstream>
+#include <QStringList>
 #include "customer.h"
 
 using namespace std;
@@ -41,6 +42,12 @@ public:
 
     // Customers
     bool addCustomer(const Customer& newCustomer);
+    //QList<Customer> getAllCustomers();  Might not need to implement this :)
+    QStringList getCustomerNames();
+    QString getCustomerStreetname(QString customerName);
+    QString getCustomerCityStateZip(QString customerName);
+    QString getCustomerInterest(QString customerName);
+    QString getCustomerKey(QString customerName);
 
     // Populate database from file
     bool populateCustomers();

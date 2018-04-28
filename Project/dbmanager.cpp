@@ -118,6 +118,148 @@ bool dbManager::addCustomer(const Customer& newCustomer)
     return success;
 }
 
+/*
+QList<Customer> dbManager::getAllCustomers()
+{
+    QSqlQuery query;
+    QList<Customer> customerList;
+    QString customer_name;
+    QString customer_streetname;
+    QString customer_city_state_zip;
+    QString customer_interest;
+    QString customer_key;
+
+    query.prepare("SELECT name, streetname, city_state_zip, interest, key FROM customer_list");
+
+    if(query.exec())
+    {
+        customer_name            = query.record().indexOf("name");
+        customer_streetname      = query.record().indexOf("streetname");
+        customer_city_state_zip  = query.record().indexOf("city_state_zip");
+        customer_interest        = query.record().indexOf("interest");
+        customer_key             = query.record().indexOf("key");
+
+        while(query.next())
+        {
+            customerList.append(Customer(customer_name, customer_streetname, customer_city_state_zip, customer_interest, customer_key));
+        }
+        qDebug() << "Got all customers from database.";
+    }
+    else
+    {
+        qDebug() << "Error Getting Customers: " << query.lastError();
+    }
+
+    return customerList;
+}
+*/
+
+QStringList dbManager::getCustomerNames()
+{
+    QSqlQuery query;
+    QStringList customerNames;
+    QString customer_name;
+    int nameIndex;
+
+    query.prepare("SELECT name FROM customer_list");
+    if(query.exec())
+    {
+        nameIndex = query.record().indexOf("name");
+        while(query.next())
+        {
+            customer_name = query.value(nameIndex).toString();
+            customerNames.append(customer_name);
+        }
+        qDebug() << "Got all customer names from database.";
+    }
+
+    return customerNames;
+}
+
+QString dbManager::getCustomerStreetname(QString customerName)
+{
+  QSqlQuery query;
+  QString customer_name = customerName;
+  QString customer_streetname;
+  int streetIndex;
+
+  query.prepare("SELECT streetname FROM customer_list WHERE name = '"+customer_name+"'");
+  if(query.exec())
+  {
+      streetIndex = query.record().indexOf("streetname");
+      while(query.next())
+      {
+          customer_streetname = query.value(streetIndex).toString();
+      }
+      qDebug() << "Got " << customerName <<  " streetname from database.";
+  }
+
+  return customer_streetname;
+}
+
+QString dbManager::getCustomerCityStateZip(QString customerName)
+{
+  QSqlQuery query;
+  QString customer_name = customerName;
+  QString customerCityStateZip;
+  int CityStateZipIndex;
+
+  query.prepare("SELECT city_state_zip FROM customer_list WHERE name = '"+customer_name+"'");
+  if(query.exec())
+  {
+      CityStateZipIndex = query.record().indexOf("city_state_zip");
+      while(query.next())
+      {
+          customerCityStateZip = query.value(CityStateZipIndex).toString();
+      }
+      qDebug() << "Got " << customerName <<  " City, State & Zip from database.";
+  }
+
+  return customerCityStateZip;
+}
+
+QString dbManager::getCustomerInterest(QString customerName)
+{
+  QSqlQuery query;
+  QString customer_name = customerName;
+  QString customerInterest;
+  int interestIndex;
+
+  query.prepare("SELECT interest FROM customer_list WHERE name = '"+customer_name+"'");
+  if(query.exec())
+  {
+      interestIndex = query.record().indexOf("interest");
+      while(query.next())
+      {
+          customerInterest = query.value(interestIndex).toString();
+      }
+      qDebug() << "Got " << customerName <<  " interest from database.";
+  }
+
+  return customerInterest;
+}
+
+QString dbManager::getCustomerKey(QString customerName)
+{
+  QSqlQuery query;
+  QString customer_name = customerName;
+  QString customerKey;
+  int keyIndex;
+
+  query.prepare("SELECT key FROM customer_list WHERE name = '"+customer_name+"'");
+  if(query.exec())
+  {
+      keyIndex = query.record().indexOf("key");
+      while(query.next())
+      {
+          customerKey = query.value(keyIndex).toString();
+      }
+      qDebug() << "Got " << customerName <<  " key from database.";
+  }
+
+  return customerKey;
+}
+
 bool dbManager::populateCustomers()
 {
     bool success;
@@ -126,8 +268,8 @@ bool dbManager::populateCustomers()
     string customer_streetname;
     string customer_city_state_zip;
     string customer_interest;
-    string customer_key_str;
-    bool customer_key;
+    string customer_key;
+
 
     fin.open(CUSTOMER_FILE.c_str());
     success = true;
@@ -138,23 +280,18 @@ bool dbManager::populateCustomers()
         getline(fin, customer_streetname);
         getline(fin, customer_city_state_zip);
         getline(fin, customer_interest);
-        getline(fin, customer_key_str);
-
-        if(customer_key_str == "key")
-            customer_key = true;
-        else
-            customer_key = false;
+        getline(fin, customer_key);
 
         qDebug() << QString::fromStdString(customer_name);
         qDebug() << QString::fromStdString(customer_streetname);
         qDebug() << QString::fromStdString(customer_city_state_zip);
         qDebug() << QString::fromStdString(customer_interest);
-        qDebug() << QString::fromStdString(customer_key_str);
+        qDebug() << QString::fromStdString(customer_key);
 
 
         if(!addCustomer(Customer(QString::fromStdString(customer_name), QString::fromStdString(customer_streetname),
                                  QString::fromStdString(customer_city_state_zip), QString::fromStdString(customer_interest),
-                                 customer_key)))
+                                 QString::fromStdString(customer_key))))
         {
             success = false;
         }
