@@ -42,6 +42,7 @@ public:
 
     // Customers
     bool addCustomer(const Customer& newCustomer);
+    bool addCredentials(QString username, QString password);
     //QList<Customer> getAllCustomers();  Might not need to implement this :)
     QStringList getCustomerNames();
     QStringList getKeyCustomerNames();

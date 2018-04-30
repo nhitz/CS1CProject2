@@ -118,6 +118,34 @@ bool dbManager::addCustomer(const Customer& newCustomer)
     return success;
 }
 
+
+bool dbManager::addCredentials(QString username, QString password)
+{
+    QSqlQuery query;
+    bool success;
+
+    query.prepare("INSERT INTO customer_credentials (username, password) "
+                  "VALUES (:username, :password)");
+    query.bindValue(":username", username);
+    query.bindValue(":password", password);
+
+    if(query.exec())
+    {
+        success = true;
+    }
+    else
+    {
+       qDebug() << "Failed to add customer credentials" << query.lastError();
+       success = false;
+    }
+    return success;
+}
+
+
+
+
+
+
 /*
 QList<Customer> dbManager::getAllCustomers()
 {

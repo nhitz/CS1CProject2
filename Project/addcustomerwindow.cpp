@@ -20,16 +20,24 @@ void addcustomerwindow::on_okButton_clicked()
     QString city_state_zip;
     QString interest;
     QString key;
+    QString username;
+    QString password;
 
     name = ui->customerName->text();
     streetname = ui->streetName->text();
     city_state_zip = ui->cityStateZip->text();
     interest = ui->interestChoice->itemText(ui->interestChoice->currentIndex());
     key = ui->keyChoice->itemText(ui->keyChoice->currentIndex());
+//Add username and password to database
+    username = ui->UserNameEdit->text();
+    password = ui->PasswordEdit->text();
 
     if(dbManager::instance().addCustomer(Customer(name, streetname, city_state_zip, interest, key)))
     {
-        ui->outputLabel->setText("Customer Added");
+        if(dbManager::instance().addCredentials(username, password)) {
+            ui->outputLabel->setText("Customer Added");
+        }
+
     }
     else
     {

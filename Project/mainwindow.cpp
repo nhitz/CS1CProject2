@@ -36,3 +36,5 @@ void MainWindow::on_adminLoginButton_clicked()
     myAdmin.setModal(true);
     myAdmin.exec();
 }
+
+
