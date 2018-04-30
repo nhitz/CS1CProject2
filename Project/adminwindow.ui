@@ -46,7 +46,7 @@
     <string>Customer's Info:</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>390</x>
@@ -93,70 +93,105 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
-     <x>51</x>
-     <y>93</y>
-     <width>258</width>
-     <height>274</height>
+     <x>52</x>
+     <y>122</y>
+     <width>256</width>
+     <height>192</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0" colspan="2">
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Filter:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="txtFilter"/>
-      </item>
-     </layout>
-    </item>
-    <item row="1" column="0" colspan="2">
-     <widget class="QListWidget" name="listWidget"/>
-    </item>
-    <item row="2" column="0" colspan="2">
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QPushButton" name="AddButton">
-        <property name="text">
-         <string>Add</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QPushButton" name="DeleteButton">
-          <property name="text">
-           <string>Delete</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="labelTotalCustomers">
-      <property name="text">
-       <string>Total Customers:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QLabel" name="labelTotalCustomersNumber">
-      <property name="text">
-       <string>0</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
+  </widget>
+  <widget class="QLabel" name="labelTotalCustomers">
+   <property name="geometry">
+    <rect>
+     <x>52</x>
+     <y>353</y>
+     <width>82</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Total Customers:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelTotalCustomersNumber">
+   <property name="geometry">
+    <rect>
+     <x>183</x>
+     <y>353</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>87</x>
+     <y>95</y>
+     <width>171</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>All Customers</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Key Customers</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Customers by Name</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>53</x>
+     <y>95</y>
+     <width>28</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Filter:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="AddButton">
+   <property name="geometry">
+    <rect>
+     <x>53</x>
+     <y>322</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="DeleteButton">
+   <property name="geometry">
+    <rect>
+     <x>135</x>
+     <y>322</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete</string>
+   </property>
   </widget>
  </widget>
  <resources/>

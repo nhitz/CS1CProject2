@@ -11,11 +11,10 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
@@ -27,25 +26,20 @@ class Ui_adminwindow
 public:
     QLabel *label;
     QLabel *label_3;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QGridLayout *gridLayout;
     QLabel *selectedCustomerInterest;
     QLabel *selectedCustomerStreetname;
     QLabel *selectedCustomerCityStateZip;
     QLabel *selectedCustomerKey;
     QLabel *selectedCustomerName;
-    QWidget *widget1;
-    QGridLayout *gridLayout_2;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *label_2;
-    QLineEdit *txtFilter;
     QListWidget *listWidget;
-    QHBoxLayout *horizontalLayout_2;
-    QPushButton *AddButton;
-    QHBoxLayout *horizontalLayout;
-    QPushButton *DeleteButton;
     QLabel *labelTotalCustomers;
     QLabel *labelTotalCustomersNumber;
+    QComboBox *comboBox;
+    QLabel *label_2;
+    QPushButton *AddButton;
+    QPushButton *DeleteButton;
 
     void setupUi(QDialog *adminwindow)
     {
@@ -63,93 +57,61 @@ public:
         label_3 = new QLabel(adminwindow);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(390, 90, 141, 16));
-        widget = new QWidget(adminwindow);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(390, 120, 251, 191));
-        gridLayout = new QGridLayout(widget);
+        layoutWidget = new QWidget(adminwindow);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(390, 120, 251, 191));
+        gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        selectedCustomerInterest = new QLabel(widget);
+        selectedCustomerInterest = new QLabel(layoutWidget);
         selectedCustomerInterest->setObjectName(QStringLiteral("selectedCustomerInterest"));
 
         gridLayout->addWidget(selectedCustomerInterest, 3, 0, 1, 1);
 
-        selectedCustomerStreetname = new QLabel(widget);
+        selectedCustomerStreetname = new QLabel(layoutWidget);
         selectedCustomerStreetname->setObjectName(QStringLiteral("selectedCustomerStreetname"));
 
         gridLayout->addWidget(selectedCustomerStreetname, 1, 0, 1, 1);
 
-        selectedCustomerCityStateZip = new QLabel(widget);
+        selectedCustomerCityStateZip = new QLabel(layoutWidget);
         selectedCustomerCityStateZip->setObjectName(QStringLiteral("selectedCustomerCityStateZip"));
 
         gridLayout->addWidget(selectedCustomerCityStateZip, 2, 0, 1, 1);
 
-        selectedCustomerKey = new QLabel(widget);
+        selectedCustomerKey = new QLabel(layoutWidget);
         selectedCustomerKey->setObjectName(QStringLiteral("selectedCustomerKey"));
 
         gridLayout->addWidget(selectedCustomerKey, 4, 0, 1, 1);
 
-        selectedCustomerName = new QLabel(widget);
+        selectedCustomerName = new QLabel(layoutWidget);
         selectedCustomerName->setObjectName(QStringLiteral("selectedCustomerName"));
 
         gridLayout->addWidget(selectedCustomerName, 0, 0, 1, 1);
 
-        widget1 = new QWidget(adminwindow);
-        widget1->setObjectName(QStringLiteral("widget1"));
-        widget1->setGeometry(QRect(51, 93, 258, 274));
-        gridLayout_2 = new QGridLayout(widget1);
-        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        label_2 = new QLabel(widget1);
-        label_2->setObjectName(QStringLiteral("label_2"));
-
-        horizontalLayout_3->addWidget(label_2);
-
-        txtFilter = new QLineEdit(widget1);
-        txtFilter->setObjectName(QStringLiteral("txtFilter"));
-
-        horizontalLayout_3->addWidget(txtFilter);
-
-
-        gridLayout_2->addLayout(horizontalLayout_3, 0, 0, 1, 2);
-
-        listWidget = new QListWidget(widget1);
+        listWidget = new QListWidget(adminwindow);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-
-        gridLayout_2->addWidget(listWidget, 1, 0, 1, 2);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        AddButton = new QPushButton(widget1);
-        AddButton->setObjectName(QStringLiteral("AddButton"));
-
-        horizontalLayout_2->addWidget(AddButton);
-
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        DeleteButton = new QPushButton(widget1);
-        DeleteButton->setObjectName(QStringLiteral("DeleteButton"));
-
-        horizontalLayout->addWidget(DeleteButton);
-
-
-        horizontalLayout_2->addLayout(horizontalLayout);
-
-
-        gridLayout_2->addLayout(horizontalLayout_2, 2, 0, 1, 2);
-
-        labelTotalCustomers = new QLabel(widget1);
+        listWidget->setGeometry(QRect(52, 122, 256, 192));
+        labelTotalCustomers = new QLabel(adminwindow);
         labelTotalCustomers->setObjectName(QStringLiteral("labelTotalCustomers"));
-
-        gridLayout_2->addWidget(labelTotalCustomers, 3, 0, 1, 1);
-
-        labelTotalCustomersNumber = new QLabel(widget1);
+        labelTotalCustomers->setGeometry(QRect(52, 353, 82, 16));
+        labelTotalCustomersNumber = new QLabel(adminwindow);
         labelTotalCustomersNumber->setObjectName(QStringLiteral("labelTotalCustomersNumber"));
-
-        gridLayout_2->addWidget(labelTotalCustomersNumber, 3, 1, 1, 1);
-
+        labelTotalCustomersNumber->setGeometry(QRect(183, 353, 16, 16));
+        comboBox = new QComboBox(adminwindow);
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+        comboBox->setGeometry(QRect(87, 95, 171, 20));
+        label_2 = new QLabel(adminwindow);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(53, 95, 28, 16));
+        AddButton = new QPushButton(adminwindow);
+        AddButton->setObjectName(QStringLiteral("AddButton"));
+        AddButton->setGeometry(QRect(53, 322, 75, 23));
+        DeleteButton = new QPushButton(adminwindow);
+        DeleteButton->setObjectName(QStringLiteral("DeleteButton"));
+        DeleteButton->setGeometry(QRect(135, 322, 75, 23));
 
         retranslateUi(adminwindow);
 
@@ -166,11 +128,15 @@ public:
         selectedCustomerCityStateZip->setText(QString());
         selectedCustomerKey->setText(QString());
         selectedCustomerName->setText(QString());
+        labelTotalCustomers->setText(QApplication::translate("adminwindow", "Total Customers:", nullptr));
+        labelTotalCustomersNumber->setText(QApplication::translate("adminwindow", "0", nullptr));
+        comboBox->setItemText(0, QApplication::translate("adminwindow", "All Customers", nullptr));
+        comboBox->setItemText(1, QApplication::translate("adminwindow", "Key Customers", nullptr));
+        comboBox->setItemText(2, QApplication::translate("adminwindow", "Customers by Name", nullptr));
+
         label_2->setText(QApplication::translate("adminwindow", "Filter:", nullptr));
         AddButton->setText(QApplication::translate("adminwindow", "Add", nullptr));
         DeleteButton->setText(QApplication::translate("adminwindow", "Delete", nullptr));
-        labelTotalCustomers->setText(QApplication::translate("adminwindow", "Total Customers:", nullptr));
-        labelTotalCustomersNumber->setText(QApplication::translate("adminwindow", "0", nullptr));
     } // retranslateUi
 
 };

@@ -176,6 +176,28 @@ QStringList dbManager::getCustomerNames()
     return customerNames;
 }
 
+QStringList dbManager::getKeyCustomerNames()
+{
+    QSqlQuery query;
+    QStringList customerNames;
+    QString customer_name;
+    QString key_str = "key";
+    int nameIndex;
+
+    query.prepare("SELECT name FROM customer_list WHERE key = '"+key_str+"'");
+    if(query.exec())
+    {
+        nameIndex = query.record().indexOf("name");
+        while(query.next())
+        {
+            customer_name = query.value(nameIndex).toString();
+            customerNames.append(customer_name);
+        }
+        qDebug() << "Got all KEY customer names from database.";
+    }
+
+    return customerNames;
+}
 QString dbManager::getCustomerStreetname(QString customerName)
 {
   QSqlQuery query;

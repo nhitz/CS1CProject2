@@ -15,8 +15,24 @@ adminwindow::adminwindow(QWidget *parent) :
 void adminwindow::updateCustomerList()
 {
     ui->listWidget->clear();
-    customerNames = dbManager::instance().getCustomerNames();
-    ui->listWidget->addItems(customerNames);
+
+    if(ui->comboBox->currentText() == "All Customers")
+    {
+        customerNames = dbManager::instance().getCustomerNames();
+        ui->listWidget->addItems(customerNames);
+    }
+    if(ui->comboBox->currentText() == "Customers by Name")
+    {
+        customerNames = dbManager::instance().getCustomerNames();
+        ui->listWidget->addItems(customerNames);
+        ui->listWidget->sortItems(Qt::AscendingOrder);
+    }
+    if(ui->comboBox->currentText() == "Key Customers")
+    {
+        customerNames = dbManager::instance().getKeyCustomerNames();
+        ui->listWidget->addItems(customerNames);
+    }
+
     ui->labelTotalCustomersNumber->setText(QString("%1").arg(ui->listWidget->count()));
 }
 
@@ -58,6 +74,21 @@ void adminwindow::on_DeleteButton_clicked()
     if(dbManager::instance().removeCustomer(ui->listWidget->currentItem()->text()))
     {
         qDebug() << "Deleted customer";
+        ui->selectedCustomerName->clear();
+        ui->selectedCustomerStreetname->clear();
+        ui->selectedCustomerCityStateZip->clear();
+        ui->selectedCustomerInterest->clear();
+        ui->selectedCustomerKey->clear();
         updateCustomerList();
     }
+    else
+    {
+        qDebug() << "Could not delete customer";
+        return;
+    }
+}
+
+void adminwindow::on_comboBox_currentIndexChanged()
+{
+    updateCustomerList();
 }

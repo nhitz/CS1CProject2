@@ -44,6 +44,7 @@ public:
     bool addCustomer(const Customer& newCustomer);
     //QList<Customer> getAllCustomers();  Might not need to implement this :)
     QStringList getCustomerNames();
+    QStringList getKeyCustomerNames();
     QString getCustomerStreetname(QString customerName);
     QString getCustomerCityStateZip(QString customerName);
     QString getCustomerInterest(QString customerName);

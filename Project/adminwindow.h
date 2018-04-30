@@ -24,6 +24,8 @@ private slots:
   void on_listWidget_itemClicked(QListWidgetItem *item);
   void on_DeleteButton_clicked();
 
+  void on_comboBox_currentIndexChanged();
+
 private:
     Ui::adminwindow *ui;
     //QList<Customer> customerObjects;
