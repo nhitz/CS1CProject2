@@ -4,13 +4,20 @@
 #include <QDialog>
 #include "dbmanager.h"
 
+/********************************************//**
+ *  Namespace for the customer window UI.
+ ***********************************************/
 namespace Ui {
   class addcustomerwindow;
 }
 
+/********************************************//**
+ *  Class object for the customer window display.
+ ***********************************************/
 class addcustomerwindow : public QDialog
 {
   Q_OBJECT
+
 
 public:
   explicit addcustomerwindow(QWidget *parent = 0);
