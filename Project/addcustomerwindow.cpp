@@ -1,6 +1,10 @@
+
 #include "addcustomerwindow.h"
 #include "ui_addcustomerwindow.h"
 
+/********************************************//**
+ *  Adds a customer window to the display.
+ ***********************************************/
 addcustomerwindow::addcustomerwindow(QWidget *parent) :
   QDialog(parent),
   ui(new Ui::addcustomerwindow)
@@ -8,11 +12,18 @@ addcustomerwindow::addcustomerwindow(QWidget *parent) :
   ui->setupUi(this);
 }
 
+/********************************************//**
+ *  Deletes a customer window from the display.
+ ***********************************************/
 addcustomerwindow::~addcustomerwindow()
 {
   delete ui;
 }
 
+
+/********************************************//**
+ *  Procedure for when OK button is clicked.
+ ***********************************************/
 void addcustomerwindow::on_okButton_clicked()
 {
     QString name;
@@ -46,6 +57,9 @@ void addcustomerwindow::on_okButton_clicked()
     close();
 }
 
+/********************************************//**
+ *  Closes customer window when button clicked.
+ ***********************************************/
 void addcustomerwindow::on_cancelButton_clicked()
 {
     close();
