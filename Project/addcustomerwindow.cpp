@@ -3,7 +3,7 @@
 #include "ui_addcustomerwindow.h"
 
 /********************************************//**
- *  Adds a customer window to the display.
+ *  Adds a customer window to the main display.
  ***********************************************/
 addcustomerwindow::addcustomerwindow(QWidget *parent) :
   QDialog(parent),
