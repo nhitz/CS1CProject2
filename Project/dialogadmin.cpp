@@ -2,6 +2,9 @@
 #include "ui_dialogadmin.h"
 #include "adminwindow.h"
 
+/********************************************//**
+ *  Constructor for the Admin Dialog widget.
+ ***********************************************/
 DialogAdmin::DialogAdmin(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DialogAdmin)
@@ -18,11 +21,17 @@ DialogAdmin::DialogAdmin(QWidget *parent) :
     }
 }
 
+/********************************************//**
+ *  Destructor for the Admin Dialog widget.
+ ***********************************************/
 DialogAdmin::~DialogAdmin()
 {
     delete ui;
 }
 
+/********************************************//**
+ *  Procedure for clicking the admin login btn.
+ ***********************************************/
 void DialogAdmin::on_AdminLoginButton_clicked()
 {
     adminwindow adminWin;
