@@ -23,6 +23,9 @@
 
 QT_BEGIN_NAMESPACE
 
+/********************************************//**
+ *  Object class for the Administrator Dialog.
+ ***********************************************/
 class Ui_DialogAdmin
 {
 public:
@@ -103,6 +106,9 @@ public:
 
 };
 
+/********************************************//**
+ *  Namespace for the user interface.
+ ***********************************************/
 namespace Ui {
     class DialogAdmin: public Ui_DialogAdmin {};
 } // namespace Ui
