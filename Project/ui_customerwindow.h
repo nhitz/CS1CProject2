@@ -18,6 +18,9 @@
 
 QT_BEGIN_NAMESPACE
 
+/********************************************//**
+ *  Object class for the customer window widget.
+ ***********************************************/
 class Ui_CustomerWindow
 {
 public:
@@ -40,6 +43,9 @@ public:
 
 };
 
+/********************************************//**
+ *  Namespace for the user interface.
+ ***********************************************/
 namespace Ui {
     class CustomerWindow: public Ui_CustomerWindow {};
 } // namespace Ui
