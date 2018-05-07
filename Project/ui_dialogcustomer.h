@@ -23,6 +23,9 @@
 
 QT_BEGIN_NAMESPACE
 
+/********************************************//**
+ *  Object class for the customer dialog UI.
+ ***********************************************/
 class Ui_DialogCustomer
 {
 public:
@@ -102,6 +105,9 @@ public:
 
 };
 
+/********************************************//**
+ *  Namespace for the user interface.
+ ***********************************************/
 namespace Ui {
     class DialogCustomer: public Ui_DialogCustomer {};
 } // namespace Ui
