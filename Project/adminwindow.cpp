@@ -1,6 +1,9 @@
 #include "adminwindow.h"
 #include "ui_adminwindow.h"
 
+/********************************************//**
+ *  Constructor for administrator's window.
+ ***********************************************/
 adminwindow::adminwindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::adminwindow)
@@ -12,6 +15,9 @@ adminwindow::adminwindow(QWidget *parent) :
     ui->labelTotalCustomersNumber->setText(QString("%1").arg(ui->listWidget->count()));
 }
 
+/********************************************//**
+ *  Updates the customer list in the UI.
+ ***********************************************/
 void adminwindow::updateCustomerList()
 {
     ui->listWidget->clear();
@@ -36,11 +42,17 @@ void adminwindow::updateCustomerList()
     ui->labelTotalCustomersNumber->setText(QString("%1").arg(ui->listWidget->count()));
 }
 
+/********************************************//**
+ *  Deletes the administrator's window.
+ ***********************************************/
 adminwindow::~adminwindow()
 {
     delete ui;
 }
 
+/********************************************//**
+ *  Procedure for when the Add Button is clicked.
+ ***********************************************/
 void adminwindow::on_AddButton_clicked()
 {
   addcustomerwindow *addCustomerWin;
@@ -51,6 +63,9 @@ void adminwindow::on_AddButton_clicked()
   delete addCustomerWin;
 }
 
+/********************************************//**
+ *  For when an Item is clicked on List Widget.
+ ***********************************************/
 void adminwindow::on_listWidget_itemClicked(QListWidgetItem *item)
 {
 
@@ -69,6 +84,9 @@ void adminwindow::on_listWidget_itemClicked(QListWidgetItem *item)
     ui->selectedCustomerKey->setText(key);
 }
 
+/********************************************//**
+ *  Procedure for when Delete Button is clicked.
+ ***********************************************/
 void adminwindow::on_DeleteButton_clicked()
 {
     if(dbManager::instance().removeCustomer(ui->listWidget->currentItem()->text()))
@@ -88,6 +106,9 @@ void adminwindow::on_DeleteButton_clicked()
     }
 }
 
+/********************************************//**
+ *  Changes index within the combo box.
+ ***********************************************/
 void adminwindow::on_comboBox_currentIndexChanged()
 {
     updateCustomerList();
