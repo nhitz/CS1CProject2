@@ -3,6 +3,9 @@
 #include "dialogcustomer.h"
 #include "dialogadmin.h"
 
+/********************************************//**
+ *  Constructor for the main window widget.
+ ***********************************************/
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -16,11 +19,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->test2->setPixmap(pic.scaled(500,500,Qt::KeepAspectRatio));
 }
 
+/********************************************//**
+ *  Destructor for the main window widget.
+ ***********************************************/
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
+/********************************************//**
+ *  Procedure for logging in from main window.
+ ***********************************************/
 void MainWindow::on_customerLoginButton_clicked()
 {
     DialogCustomer customerWindow;
@@ -29,6 +38,9 @@ void MainWindow::on_customerLoginButton_clicked()
     customerWindow.exec();
 }
 
+/********************************************//**
+ *  For adminstrators logging in from main wdw.
+ ***********************************************/
 void MainWindow::on_adminLoginButton_clicked()
 {
     DialogAdmin myAdmin;
