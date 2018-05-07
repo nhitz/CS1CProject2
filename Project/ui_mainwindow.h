@@ -26,6 +26,9 @@
 
 QT_BEGIN_NAMESPACE
 
+/********************************************//**
+ *  Object class for the main window widget.
+ ***********************************************/
 class Ui_MainWindow
 {
 public:
@@ -142,6 +145,9 @@ public:
 
 };
 
+/********************************************//**
+ *  Namespace for the user interface.
+ ***********************************************/
 namespace Ui {
     class MainWindow: public Ui_MainWindow {};
 } // namespace Ui
