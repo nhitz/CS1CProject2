@@ -9,26 +9,41 @@ Customer::Customer(QString customer_name, QString customer_street, QString custo
     key            = customer_key;
 }
 
+/********************************************//**
+ *  Getter for customer name variable.
+ ***********************************************/
 QString Customer::getCustomerName() const
 {
     return name;
 }
 
+/********************************************//**
+ *  Getter for customer street variable.
+ ***********************************************/
 QString Customer::getCustomerStreet() const
 {
     return streetname;
 }
 
+/********************************************//**
+ *  Getter for customer city variable.
+ ***********************************************/
 QString Customer::getCustomerCity() const
 {
     return city_state_zip;
 }
 
+/********************************************//**
+ *  Getter for customer interest variable.
+ ***********************************************/
 QString Customer::getCustomerInterest() const
 {
     return interest;
 }
 
+/********************************************//**
+ *  Getter for customer key variable.
+ ***********************************************/
 QString Customer::getCustomerKey() const
 {
     return key;
