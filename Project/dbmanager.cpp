@@ -1,5 +1,8 @@
 #include "dbmanager.h"
 
+/********************************************//**
+ *  Constructor for the Database Manager.
+ ***********************************************/
 dbManager::dbManager()
 {
     iCybSecdb = QSqlDatabase::addDatabase("QSQLITE");
@@ -22,6 +25,9 @@ dbManager::dbManager()
     }
 }
 
+/********************************************//**
+ *  Destructor for the Database Manager.
+ ***********************************************/
 dbManager::~dbManager()
 {
     if(iCybSecdb.isOpen())
@@ -31,6 +37,9 @@ dbManager::~dbManager()
     qDebug() << "Destroying dbManager";
 }
 
+/********************************************//**
+ *  Create an instance of the Database Manager.
+ ***********************************************/
 dbManager& dbManager::instance()
 {
     static dbManager iCybSecdbInstance;
@@ -43,6 +52,9 @@ bool dbManager::isOpen() const
     return iCybSecdb.isOpen();
 }
 
+/********************************************//**
+ *  Validation procedure for the adminsistrator.
+ ***********************************************/
 bool dbManager::validateAdmin(QString usern, QString passw)
 {
     QSqlQuery query;
@@ -68,6 +80,9 @@ bool dbManager::validateAdmin(QString usern, QString passw)
     return success;
 }
 
+/********************************************//**
+ *  Validation procedure for the customer.
+ ***********************************************/
 bool dbManager::validateCustomer(QString usern, QString passw)
 {
     QSqlQuery query;
@@ -93,6 +108,9 @@ bool dbManager::validateCustomer(QString usern, QString passw)
     return success;
 }
 
+/********************************************//**
+ *  Procedure to add customer in DB Mgr. class.
+ ***********************************************/
 bool dbManager::addCustomer(const Customer& newCustomer)
 {
     QSqlQuery query;
@@ -118,7 +136,9 @@ bool dbManager::addCustomer(const Customer& newCustomer)
     return success;
 }
 
-
+/********************************************//**
+ *  Procduere to add credentials, DB Mgr. class.
+ ***********************************************/
 bool dbManager::addCredentials(QString username, QString password)
 {
     QSqlQuery query;
@@ -182,6 +202,9 @@ QList<Customer> dbManager::getAllCustomers()
 }
 */
 
+/********************************************//**
+ *  Getter for customer names.
+ ***********************************************/
 QStringList dbManager::getCustomerNames()
 {
     QSqlQuery query;
@@ -204,6 +227,9 @@ QStringList dbManager::getCustomerNames()
     return customerNames;
 }
 
+/********************************************//**
+ *  Getter for the names of key customers.
+ ***********************************************/
 QStringList dbManager::getKeyCustomerNames()
 {
     QSqlQuery query;
@@ -226,6 +252,10 @@ QStringList dbManager::getKeyCustomerNames()
 
     return customerNames;
 }
+
+/********************************************//**
+ *  Getter for customer street names.
+ ***********************************************/
 QString dbManager::getCustomerStreetname(QString customerName)
 {
   QSqlQuery query;
@@ -247,6 +277,9 @@ QString dbManager::getCustomerStreetname(QString customerName)
   return customer_streetname;
 }
 
+/********************************************//**
+ *  Getter for customer city, state, and zip.
+ ***********************************************/
 QString dbManager::getCustomerCityStateZip(QString customerName)
 {
   QSqlQuery query;
@@ -268,6 +301,9 @@ QString dbManager::getCustomerCityStateZip(QString customerName)
   return customerCityStateZip;
 }
 
+/********************************************//**
+ *  Getter for a customer's interest level.
+ ***********************************************/
 QString dbManager::getCustomerInterest(QString customerName)
 {
   QSqlQuery query;
@@ -289,6 +325,9 @@ QString dbManager::getCustomerInterest(QString customerName)
   return customerInterest;
 }
 
+/********************************************//**
+ *  Getter for the key customers.
+ ***********************************************/
 QString dbManager::getCustomerKey(QString customerName)
 {
   QSqlQuery query;
@@ -310,6 +349,9 @@ QString dbManager::getCustomerKey(QString customerName)
   return customerKey;
 }
 
+/********************************************//**
+ *  Procedure for removing customers from DB.
+ ***********************************************/
 bool dbManager::removeCustomer(QString customerName)
 {
     QString customer_name = customerName;
@@ -330,6 +372,9 @@ bool dbManager::removeCustomer(QString customerName)
     return success;
 }
 
+/********************************************//**
+ *  Procedure for populating customer list.
+ ***********************************************/
 bool dbManager::populateCustomers()
 {
     bool success;
