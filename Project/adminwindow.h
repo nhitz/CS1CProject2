@@ -6,10 +6,16 @@
 #include "dbmanager.h"
 #include "addcustomerwindow.h"
 
+/********************************************//**
+ *  A namespace for the User Interface.
+ ***********************************************/
 namespace Ui {
 class adminwindow;
 }
 
+/********************************************//**
+ *  Class object for the administrator's window.
+ ***********************************************/
 class adminwindow : public QDialog
 {
     Q_OBJECT
