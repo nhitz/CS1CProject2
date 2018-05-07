@@ -18,9 +18,6 @@
 
 QT_BEGIN_NAMESPACE
 
-/********************************************//**
- *  Object class for the customer window widget.
- ***********************************************/
 class Ui_CustomerWindow
 {
 public:
@@ -29,7 +26,7 @@ public:
     {
         if (CustomerWindow->objectName().isEmpty())
             CustomerWindow->setObjectName(QStringLiteral("CustomerWindow"));
-        CustomerWindow->resize(400, 300);
+        CustomerWindow->resize(1042, 611);
 
         retranslateUi(CustomerWindow);
 
@@ -43,9 +40,6 @@ public:
 
 };
 
-/********************************************//**
- *  Namespace for the user interface.
- ***********************************************/
 namespace Ui {
     class CustomerWindow: public Ui_CustomerWindow {};
 } // namespace Ui

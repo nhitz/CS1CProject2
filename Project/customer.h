@@ -15,6 +15,8 @@ private:
     QString city_state_zip;
     QString interest;
     QString key;
+    QString username;
+    QString password;
 
 public:
     Customer(QString, QString, QString, QString, QString);
@@ -23,6 +25,8 @@ public:
     QString getCustomerCity() const;
     QString getCustomerInterest() const;
     QString getCustomerKey() const;
+    QString getCustomerUsername() const;
+    QString getCustomerPassword() const;
 };
 
 #endif // CUSTOMER_H

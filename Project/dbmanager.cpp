@@ -115,14 +115,16 @@ bool dbManager::addCustomer(const Customer& newCustomer)
 {
     QSqlQuery query;
     bool success;
+    QString pamphlet_sent = "No";
 
-    query.prepare("INSERT INTO customer_list (name, streetname, city_state_zip, interest, key) "
-                  "VALUES (:name, :street, :city_state_zip, :interest, :key)");
+    query.prepare("INSERT INTO customer_list (name, streetname, city_state_zip, interest, key, pamphlet_sent) "
+                  "VALUES (:name, :street, :city_state_zip, :interest, :key, :pamphlet_sent)");
     query.bindValue(":name", newCustomer.getCustomerName());
     query.bindValue(":street", newCustomer.getCustomerStreet());
     query.bindValue(":city_state_zip", newCustomer.getCustomerCity());
     query.bindValue(":interest", newCustomer.getCustomerInterest());
     query.bindValue(":key", newCustomer.getCustomerKey());
+    query.bindValue(":pamphlet_sent", pamphlet_sent);
 
     if(query.exec())
     {
@@ -160,47 +162,6 @@ bool dbManager::addCredentials(QString username, QString password)
     }
     return success;
 }
-
-
-
-
-
-
-/*
-QList<Customer> dbManager::getAllCustomers()
-{
-    QSqlQuery query;
-    QList<Customer> customerList;
-    QString customer_name;
-    QString customer_streetname;
-    QString customer_city_state_zip;
-    QString customer_interest;
-    QString customer_key;
-
-    query.prepare("SELECT name, streetname, city_state_zip, interest, key FROM customer_list");
-
-    if(query.exec())
-    {
-        customer_name            = query.record().indexOf("name");
-        customer_streetname      = query.record().indexOf("streetname");
-        customer_city_state_zip  = query.record().indexOf("city_state_zip");
-        customer_interest        = query.record().indexOf("interest");
-        customer_key             = query.record().indexOf("key");
-
-        while(query.next())
-        {
-            customerList.append(Customer(customer_name, customer_streetname, customer_city_state_zip, customer_interest, customer_key));
-        }
-        qDebug() << "Got all customers from database.";
-    }
-    else
-    {
-        qDebug() << "Error Getting Customers: " << query.lastError();
-    }
-
-    return customerList;
-}
-*/
 
 /********************************************//**
  *  Getter for customer names.
@@ -350,6 +311,30 @@ QString dbManager::getCustomerKey(QString customerName)
 }
 
 /********************************************//**
+ *  Getter for the customer's pamphlet_sent status.
+ ***********************************************/
+QString dbManager::getCustomerPamphlet(QString customerName)
+{
+  QSqlQuery query;
+  QString customer_name = customerName;
+  QString customerPamphlet;
+  int pamIndex;
+
+  query.prepare("SELECT pamphlet_sent FROM customer_list WHERE name = '"+customer_name+"'");
+  if(query.exec())
+  {
+      pamIndex = query.record().indexOf("pamphlet_sent");
+      while(query.next())
+      {
+          customerPamphlet = query.value(pamIndex).toString();
+      }
+      qDebug() << "Got " << customerName <<  " pamphlet_sent status from database.";
+  }
+
+  return customerPamphlet;
+}
+
+/********************************************//**
  *  Procedure for removing customers from DB.
  ***********************************************/
 bool dbManager::removeCustomer(QString customerName)
@@ -357,6 +342,7 @@ bool dbManager::removeCustomer(QString customerName)
     QString customer_name = customerName;
     bool success;
     QSqlQuery deleteQuery;
+    QSqlQuery deleteCredentialsQuery;
     success = false;
 
     deleteQuery.prepare("DELETE FROM customer_list WHERE name = '"+customer_name+"'");
@@ -368,6 +354,8 @@ bool dbManager::removeCustomer(QString customerName)
     {
         qDebug() << "Remove customer Error: " << deleteQuery.lastError();
     }
+
+
 
     return success;
 }

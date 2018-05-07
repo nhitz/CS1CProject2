@@ -82,6 +82,9 @@ void adminwindow::on_listWidget_itemClicked(QListWidgetItem *item)
 
     QString key = dbManager::instance().getCustomerKey(item->text());
     ui->selectedCustomerKey->setText(key);
+
+    QString pamphletSent = dbManager::instance().getCustomerPamphlet(item->text());
+    ui->selectedCustomerPamphlet->setText(pamphletSent);
 }
 
 /********************************************//**
@@ -97,6 +100,7 @@ void adminwindow::on_DeleteButton_clicked()
         ui->selectedCustomerCityStateZip->clear();
         ui->selectedCustomerInterest->clear();
         ui->selectedCustomerKey->clear();
+        ui->selectedCustomerPamphlet->clear();
         updateCustomerList();
     }
     else

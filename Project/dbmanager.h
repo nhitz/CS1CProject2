@@ -43,13 +43,13 @@ public:
     // Customers
     bool addCustomer(const Customer& newCustomer);
     bool addCredentials(QString username, QString password);
-    //QList<Customer> getAllCustomers();  Might not need to implement this :)
     QStringList getCustomerNames();
     QStringList getKeyCustomerNames();
     QString getCustomerStreetname(QString customerName);
     QString getCustomerCityStateZip(QString customerName);
     QString getCustomerInterest(QString customerName);
     QString getCustomerKey(QString customerName);
+    QString getCustomerPamphlet(QString customerPamphlet);
     bool removeCustomer(QString customerName);
 
     // Populate database from file

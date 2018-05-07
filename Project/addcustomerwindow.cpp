@@ -39,7 +39,6 @@ void addcustomerwindow::on_okButton_clicked()
     city_state_zip = ui->cityStateZip->text();
     interest = ui->interestChoice->itemText(ui->interestChoice->currentIndex());
     key = ui->keyChoice->itemText(ui->keyChoice->currentIndex());
-//Add username and password to database
     username = ui->UserNameEdit->text();
     password = ui->PasswordEdit->text();
 
