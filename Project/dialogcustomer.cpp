@@ -1,6 +1,9 @@
 #include "dialogcustomer.h"
 #include "ui_dialogcustomer.h"
 
+/********************************************//**
+ *  Constructor for the Customer Dialog widget.
+ ***********************************************/
 DialogCustomer::DialogCustomer(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DialogCustomer)
@@ -17,11 +20,17 @@ DialogCustomer::DialogCustomer(QWidget *parent) :
     }
 }
 
+/********************************************//**
+ *  Destructor for the customer dialog widget.
+ ***********************************************/
 DialogCustomer::~DialogCustomer()
 {
     delete ui;
 }
 
+/********************************************//**
+ *  Procedure for Customer Login button.
+ ***********************************************/
 void DialogCustomer::on_CustomerLoginButton_clicked()
 {
     CustomerWindow customerWin;
