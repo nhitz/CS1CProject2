@@ -5,10 +5,16 @@
 #include <customerwindow.h>
 #include <QDialog>
 
+/********************************************//**
+ *  Namespace for the User Interface.
+ ***********************************************/
 namespace Ui {
 class DialogCustomer;
 }
 
+/********************************************//**
+ *  Object class for the Customer Dialog widget.
+ ***********************************************/
 class DialogCustomer : public QDialog
 {
     Q_OBJECT
