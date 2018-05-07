@@ -4,10 +4,16 @@
 #include <QMainWindow>
 #include "dbmanager.h"
 
+/********************************************//**
+ *  Namespace for the user interface.
+ ***********************************************/
 namespace Ui {
   class MainWindow;
 }
 
+/********************************************//**
+ *  Object class for the main window widget.
+ ***********************************************/
 class MainWindow : public QMainWindow
 {
   Q_OBJECT
