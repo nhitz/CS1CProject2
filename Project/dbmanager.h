@@ -17,9 +17,9 @@
 using namespace std;
 const string CUSTOMER_FILE = "customers.txt";
 
-/**
-* @brief Manipulates the data stored within the icybersecurity database file.
-*/
+/********************************************//**
+ *  Manipulates data in the database file.
+ ***********************************************/
 class dbManager
 {
 private:
