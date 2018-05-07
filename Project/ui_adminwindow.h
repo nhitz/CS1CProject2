@@ -1,3 +1,4 @@
+
 /********************************************************************************
 ** Form generated from reading UI file 'adminwindow.ui'
 **
@@ -21,6 +22,9 @@
 
 QT_BEGIN_NAMESPACE
 
+/********************************************//**
+ *  Object class for the administrator's window.
+ ***********************************************/
 class Ui_adminwindow
 {
 public:
@@ -141,6 +145,9 @@ public:
 
 };
 
+/********************************************//**
+ *  Namespace for the user interface.
+ ***********************************************/
 namespace Ui {
     class adminwindow: public Ui_adminwindow {};
 } // namespace Ui
