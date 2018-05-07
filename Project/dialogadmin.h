@@ -4,10 +4,16 @@
 #include <QDialog>
 #include <dbmanager.h>
 
+/********************************************//**
+ *  Namespace for the user interface.
+ ***********************************************/
 namespace Ui {
 class DialogAdmin;
 }
 
+/********************************************//**
+ *  Object class for the Admin Dialog widget.
+ ***********************************************/
 class DialogAdmin : public QDialog
 {
     Q_OBJECT
