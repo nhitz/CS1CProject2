@@ -4,6 +4,9 @@
 #include <QStringList>
 #include <QDebug>
 
+/********************************************//**
+ *  Object class for the customer.
+ ***********************************************/
 class Customer
 {
 private:
