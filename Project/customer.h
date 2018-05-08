@@ -20,6 +20,7 @@ private:
 
 public:
     Customer(QString, QString, QString, QString, QString);
+    Customer(QString, QString, QString, QString, QString, QString, QString);
     QString getCustomerName() const;
     QString getCustomerStreet() const;
     QString getCustomerCity() const;

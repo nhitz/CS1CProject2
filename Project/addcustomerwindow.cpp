@@ -42,13 +42,11 @@ void addcustomerwindow::on_okButton_clicked()
     username = ui->UserNameEdit->text();
     password = ui->PasswordEdit->text();
 
-    if(dbManager::instance().addCustomer(Customer(name, streetname, city_state_zip, interest, key)))
+    if(dbManager::instance().addCustomer(Customer(name, streetname, city_state_zip, interest, key, username, password)))
     {
-        if(dbManager::instance().addCredentials(username, password)) {
-            ui->outputLabel->setText("Customer Added");
-        }
-
+        ui->outputLabel->setText("Customer Added");
     }
+
     else
     {
         ui->outputLabel->setText("Failed To Add Customer'");

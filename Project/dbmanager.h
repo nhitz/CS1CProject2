@@ -42,7 +42,6 @@ public:
 
     // Customers
     bool addCustomer(const Customer& newCustomer);
-    bool addCredentials(QString username, QString password);
     QStringList getCustomerNames();
     QStringList getKeyCustomerNames();
     QString getCustomerStreetname(QString customerName);

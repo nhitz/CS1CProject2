@@ -117,14 +117,16 @@ bool dbManager::addCustomer(const Customer& newCustomer)
     bool success;
     QString pamphlet_sent = "No";
 
-    query.prepare("INSERT INTO customer_list (name, streetname, city_state_zip, interest, key, pamphlet_sent) "
-                  "VALUES (:name, :street, :city_state_zip, :interest, :key, :pamphlet_sent)");
+    query.prepare("INSERT INTO customer_list (name, streetname, city_state_zip, interest, key, pamphlet_sent, username, password) "
+                  "VALUES (:name, :street, :city_state_zip, :interest, :key, :pamphlet_sent, :username, :password)");
     query.bindValue(":name", newCustomer.getCustomerName());
     query.bindValue(":street", newCustomer.getCustomerStreet());
     query.bindValue(":city_state_zip", newCustomer.getCustomerCity());
     query.bindValue(":interest", newCustomer.getCustomerInterest());
     query.bindValue(":key", newCustomer.getCustomerKey());
     query.bindValue(":pamphlet_sent", pamphlet_sent);
+    query.bindValue(":username", newCustomer.getCustomerUsername());
+    query.bindValue(":password", newCustomer.getCustomerPassword());
 
     if(query.exec())
     {
@@ -133,31 +135,6 @@ bool dbManager::addCustomer(const Customer& newCustomer)
     else
     {
        qDebug() << "Failed to add customer" << query.lastError();
-       success = false;
-    }
-    return success;
-}
-
-/********************************************//**
- *  Procduere to add credentials, DB Mgr. class.
- ***********************************************/
-bool dbManager::addCredentials(QString username, QString password)
-{
-    QSqlQuery query;
-    bool success;
-
-    query.prepare("INSERT INTO customer_credentials (username, password) "
-                  "VALUES (:username, :password)");
-    query.bindValue(":username", username);
-    query.bindValue(":password", password);
-
-    if(query.exec())
-    {
-        success = true;
-    }
-    else
-    {
-       qDebug() << "Failed to add customer credentials" << query.lastError();
        success = false;
     }
     return success;
