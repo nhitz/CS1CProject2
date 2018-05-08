@@ -89,7 +89,7 @@ bool dbManager::validateCustomer(QString usern, QString passw)
     bool success;
     success = false;
 
-    query.prepare("SELECT username password FROM customer_credentials WHERE username = :user AND password = :pass");
+    query.prepare("SELECT username password FROM customer_list WHERE username = :user AND password = :pass");
     query.bindValue(":user", usern);
     query.bindValue(":pass", passw);
 

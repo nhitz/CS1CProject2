@@ -113,7 +113,7 @@ void adminwindow::on_DeleteButton_clicked()
 /********************************************//**
  *  Changes index within the combo box.
  ***********************************************/
-void adminwindow::on_comboBox_currentIndexChanged()
+void adminwindow::on_comboBox_currentIndexChanged(int n)
 {
     updateCustomerList();
 }

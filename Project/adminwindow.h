@@ -30,7 +30,7 @@ private slots:
   void on_listWidget_itemClicked(QListWidgetItem *item);
   void on_DeleteButton_clicked();
 
-  void on_comboBox_currentIndexChanged();
+  void on_comboBox_currentIndexChanged(int n);
 
 private:
     Ui::adminwindow *ui;
