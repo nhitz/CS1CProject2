@@ -2,5 +2,6 @@
 <qresource>
     <file>ICyberSecurityPamphlet.jpg</file>
     <file>ICyberSecurityPamphlet-2.jpg</file>
+	<file>pamphlet.jpeg</file>
 </qresource>
 </RCC>

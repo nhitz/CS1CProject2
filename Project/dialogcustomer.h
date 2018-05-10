@@ -21,6 +21,7 @@ class DialogCustomer : public QDialog
 
 public:
     explicit DialogCustomer(QWidget *parent = 0);
+    QString getName();
     ~DialogCustomer();
 
 private slots:

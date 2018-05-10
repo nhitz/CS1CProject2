@@ -27,6 +27,7 @@ private:
     ~dbManager();
 
     QSqlDatabase iCybSecdb;
+    //QString customerIdentity;
 
 public:
     static dbManager& instance();
@@ -39,6 +40,7 @@ public:
     // Login Test
     bool validateAdmin(QString user, QString pass);
     bool validateCustomer(QString user, QString pass);
+    QString identifyFromLogin(QString user, QString pass);
 
     // Customers
     bool addCustomer(const Customer& newCustomer);
@@ -53,6 +55,15 @@ public:
 
     // Populate database from file
     bool populateCustomers();
+
+    // Testimonials
+    bool addTestimony(QString testimony);
+
+    // Product Orders
+    bool submitOrder(QString orderType, QString customer_name);
+    int getNumberBasicOrders(QString customer_name);
+    int getNumberBusinessOrders(QString customer_name);
+    int getNumberEnterpriseOrders(QString customer_name);
 };
 
 #endif // DBMANAGER_H

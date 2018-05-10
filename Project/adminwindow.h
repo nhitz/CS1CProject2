@@ -29,7 +29,6 @@ private slots:
   void on_AddButton_clicked();
   void on_listWidget_itemClicked(QListWidgetItem *item);
   void on_DeleteButton_clicked();
-
   void on_comboBox_currentIndexChanged(int n);
 
 private:

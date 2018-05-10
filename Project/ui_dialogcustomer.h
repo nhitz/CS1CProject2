@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'dialogcustomer.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.11.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,12 +10,9 @@
 #define UI_DIALOGCUSTOMER_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
@@ -23,9 +20,6 @@
 
 QT_BEGIN_NAMESPACE
 
-/********************************************//**
- *  Object class for the customer dialog UI.
- ***********************************************/
 class Ui_DialogCustomer
 {
 public:
@@ -95,19 +89,16 @@ public:
 
     void retranslateUi(QDialog *DialogCustomer)
     {
-        DialogCustomer->setWindowTitle(QApplication::translate("DialogCustomer", "Dialog", Q_NULLPTR));
-        label_3->setText(QApplication::translate("DialogCustomer", "Welcome Customer! Please Login!", Q_NULLPTR));
-        label->setText(QApplication::translate("DialogCustomer", "Username", Q_NULLPTR));
-        label_2->setText(QApplication::translate("DialogCustomer", "Password", Q_NULLPTR));
-        CustomerLoginButton->setText(QApplication::translate("DialogCustomer", "Login", Q_NULLPTR));
-        statusLabel->setText(QApplication::translate("DialogCustomer", "[+]Status", Q_NULLPTR));
+        DialogCustomer->setWindowTitle(QApplication::translate("DialogCustomer", "Dialog", nullptr));
+        label_3->setText(QApplication::translate("DialogCustomer", "Welcome Customer! Please Login!", nullptr));
+        label->setText(QApplication::translate("DialogCustomer", "Username", nullptr));
+        label_2->setText(QApplication::translate("DialogCustomer", "Password", nullptr));
+        CustomerLoginButton->setText(QApplication::translate("DialogCustomer", "Login", nullptr));
+        statusLabel->setText(QApplication::translate("DialogCustomer", "[+]Status", nullptr));
     } // retranslateUi
 
 };
 
-/********************************************//**
- *  Namespace for the user interface.
- ***********************************************/
 namespace Ui {
     class DialogCustomer: public Ui_DialogCustomer {};
 } // namespace Ui

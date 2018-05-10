@@ -33,7 +33,7 @@ DialogCustomer::~DialogCustomer()
  ***********************************************/
 void DialogCustomer::on_CustomerLoginButton_clicked()
 {
-    CustomerWindow customerWin;
+    CustomerWindow customerWin(this, dbManager::instance().identifyFromLogin(ui->CustomerUsernameEdit->text(), ui->CustomerPasswordEdit->text()));
 
     if(dbManager::instance().validateCustomer(ui->CustomerUsernameEdit->text(), ui->CustomerPasswordEdit->text()))
     {
@@ -44,4 +44,3 @@ void DialogCustomer::on_CustomerLoginButton_clicked()
     else
         ui->statusLabel->setText("Invalid username or password");
 }
-

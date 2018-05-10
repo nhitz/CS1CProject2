@@ -108,6 +108,30 @@ bool dbManager::validateCustomer(QString usern, QString passw)
     return success;
 }
 
+QString dbManager::identifyFromLogin(QString user, QString pass)
+{
+    QString username = user;
+    QString password = pass;
+    QSqlQuery query;
+    int nameIndex;
+    QString customerIdentity;
+
+    query.prepare("SELECT name FROM customer_list WHERE username = '"+username+"' AND password = '"+password+"'");
+
+    if(query.exec())
+    {
+        nameIndex = query.record().indexOf("name");
+        while(query.next())
+        {
+            qDebug() << "nameIndex " << nameIndex;
+            customerIdentity = query.value(nameIndex).toString();
+        }
+        qDebug() << "Got identity from login info " << customerIdentity;
+    }
+
+    return customerIdentity;
+}
+
 /********************************************//**
  *  Procedure to add customer in DB Mgr. class.
  ***********************************************/
@@ -378,4 +402,109 @@ bool dbManager::populateCustomers()
     }
     fin.close();
     return success;
+}
+
+bool dbManager::addTestimony(QString testimony)
+{
+    QSqlQuery query;
+    bool success;
+
+    query.prepare("INSERT INTO customer_testimonials (testimonial) "
+                  "VALUES (:testimonial)");
+    query.bindValue(":testimonial", testimony);
+
+    if(query.exec())
+    {
+        success = true;
+    }
+    else
+    {
+       qDebug() << "Failed to add testimonial" << query.lastError();
+       success = false;
+    }
+    return success;
+}
+
+bool dbManager::submitOrder(QString orderType, QString customer_name)
+{
+    QSqlQuery query;
+    bool success;
+    query.prepare("UPDATE customer_list SET '"+orderType+"' = '"+orderType+"' + 1 WHERE name = '"+customer_name+"'");
+
+    if(query.exec())
+    {
+        success = true;
+    }
+    else
+    {
+        qDebug() << "Failed to submit order" << query.lastError();
+        success = false;
+    }
+    return success;
+}
+
+int dbManager::getNumberBasicOrders(QString customer_name)
+{
+    QSqlQuery query;
+    int numOrders;
+    int orderIndex;
+    query.prepare("SELECT basic_orders FROM customer_list WHERE name = '"+customer_name+"'");
+
+    if(query.exec())
+    {
+        orderIndex = query.record().indexOf("basic_orders");
+        if(query.next())
+        {
+            numOrders = query.value(orderIndex).toInt();
+        }
+    }
+    else
+    {
+         qDebug() << "Failed to retrieve number of basic orders for " << customer_name;
+    }
+    return numOrders;
+}
+
+int dbManager::getNumberBusinessOrders(QString customer_name)
+{
+    QSqlQuery query;
+    int numOrders;
+    int orderIndex;
+    query.prepare("SELECT business_orders FROM customer_list WHERE name = '"+customer_name+"'");
+
+    if(query.exec())
+    {
+        orderIndex = query.record().indexOf("business_orders");
+        if(query.next())
+        {
+            numOrders = query.value(orderIndex).toInt();
+        }
+    }
+    else
+    {
+         qDebug() << "Failed to retrieve number of business_orders for " << customer_name;
+    }
+    return numOrders;
+}
+
+int dbManager::getNumberEnterpriseOrders(QString customer_name)
+{
+    QSqlQuery query;
+    int numOrders;
+    int orderIndex;
+    query.prepare("SELECT enterprise_orders FROM customer_list WHERE name = '"+customer_name+"'");
+
+    if(query.exec())
+    {
+        orderIndex = query.record().indexOf("enterprise_orders");
+        if(query.next())
+        {
+            numOrders = query.value(orderIndex).toInt();
+        }
+    }
+    else
+    {
+         qDebug() << "Failed to retrieve number of enterprise_orders for " << customer_name;
+    }
+    return numOrders;
 }

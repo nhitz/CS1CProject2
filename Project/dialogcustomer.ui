@@ -93,6 +93,8 @@
  <resources/>
  <connections/>
  <slots>
+  <signal>sendID()</signal>
   <slot>authenticate()</slot>
+  <slot>getID()</slot>
  </slots>
 </ui>
