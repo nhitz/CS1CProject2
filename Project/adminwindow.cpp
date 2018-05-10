@@ -85,6 +85,15 @@ void adminwindow::on_listWidget_itemClicked(QListWidgetItem *item)
 
     QString pamphletSent = dbManager::instance().getCustomerPamphlet(item->text());
     ui->selectedCustomerPamphlet->setText(pamphletSent);
+
+    int numBasicOrders = dbManager::instance().getNumberBasicOrders(item->text());
+    ui->selectedBasicOrders->setText(QString::number(numBasicOrders));
+
+    int numBusinessOrders = dbManager::instance().getNumberBusinessOrders(item->text());
+    ui->selectedBusinessOrders->setText(QString::number(numBusinessOrders));
+
+    int numEnterpriseOrders = dbManager::instance().getNumberEnterpriseOrders(item->text());
+    ui->selectedEnterpriseOrders->setText(QString::number(numEnterpriseOrders));
 }
 
 /********************************************//**
@@ -101,6 +110,9 @@ void adminwindow::on_DeleteButton_clicked()
         ui->selectedCustomerInterest->clear();
         ui->selectedCustomerKey->clear();
         ui->selectedCustomerPamphlet->clear();
+        ui->selectedBasicOrders->clear();
+        ui->selectedBusinessOrders->clear();
+        ui->selectedEnterpriseOrders->clear();
         updateCustomerList();
     }
     else
@@ -116,4 +128,9 @@ void adminwindow::on_DeleteButton_clicked()
 void adminwindow::on_comboBox_currentIndexChanged(int n)
 {
     updateCustomerList();
+}
+
+void adminwindow::calculateTotal()
+{
+
 }

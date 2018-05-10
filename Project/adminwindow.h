@@ -25,15 +25,15 @@ public:
     ~adminwindow();
 
 private slots:
-  void updateCustomerList();
-  void on_AddButton_clicked();
-  void on_listWidget_itemClicked(QListWidgetItem *item);
-  void on_DeleteButton_clicked();
-  void on_comboBox_currentIndexChanged(int n);
+    void updateCustomerList();
+    void on_AddButton_clicked();
+    void on_listWidget_itemClicked(QListWidgetItem *item);
+    void on_DeleteButton_clicked();
+    void on_comboBox_currentIndexChanged(int n);
 
 private:
+    void calculateTotal();
     Ui::adminwindow *ui;
-    //QList<Customer> customerObjects;
     QStringList customerNames;
 };
 
