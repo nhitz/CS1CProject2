@@ -52,6 +52,9 @@ public:
     QString getCustomerKey(QString customerName);
     QString getCustomerPamphlet(QString customerPamphlet);
     bool removeCustomer(QString customerName);
+    int getBasicSpent(QString customerName);
+    int getBusinessSpent(QString customerName);
+    int getEnterpriseSpent(QString customerName);
 
     // Populate database from file
     bool populateCustomers();
@@ -60,7 +63,9 @@ public:
     bool addTestimony(QString testimony);
 
     // Product Orders
-    bool submitOrder(QString orderType, QString customer_name);
+    bool submitBasicOrder(QString customer_name);
+    bool submitBusinessOrder(QString customer_name);
+    bool submitEnterpriseOrder(QString customer_name);
     int getNumberBasicOrders(QString customer_name);
     int getNumberBusinessOrders(QString customer_name);
     int getNumberEnterpriseOrders(QString customer_name);

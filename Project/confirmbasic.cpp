@@ -27,7 +27,7 @@ void confirmBasic::on_cancelButton_clicked()
 
 void confirmBasic::on_submitOrderButton_clicked()
 {
-    if(dbManager::instance().submitOrder("basic_orders", customerName))
+    if(dbManager::instance().submitBasicOrder(customerName))
        ui->thanksLabel->setText("Thanks!");
     close();
 }

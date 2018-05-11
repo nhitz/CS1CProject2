@@ -21,7 +21,7 @@ confirmBusiness::~confirmBusiness()
 
 void confirmBusiness::on_submitButton_clicked()
 {
-    if(dbManager::instance().submitOrder("business_orders", customerName))
+    if(dbManager::instance().submitBusinessOrder(customerName))
        ui->thanksLabel->setText("Thanks!");
     close();
 }

@@ -32,7 +32,6 @@ private slots:
     void on_comboBox_currentIndexChanged(int n);
 
 private:
-    void calculateTotal();
     Ui::adminwindow *ui;
     QStringList customerNames;
 };

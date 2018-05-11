@@ -33,19 +33,6 @@
     <string>Admin Page</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>320</x>
-     <y>70</y>
-     <width>141</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Customer's Info:</string>
-   </property>
-  </widget>
   <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
@@ -146,148 +133,59 @@
     <string>Delete</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_9">
-   <property name="geometry">
-    <rect>
-     <x>321</x>
-     <y>121</y>
-     <width>31</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Name:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_8">
-   <property name="geometry">
-    <rect>
-     <x>321</x>
-     <y>154</y>
-     <width>60</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Streetname:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_7">
-   <property name="geometry">
-    <rect>
-     <x>321</x>
-     <y>187</y>
-     <width>73</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>City, State Zip:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>321</x>
-     <y>219</y>
-     <width>43</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Interest:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>321</x>
-     <y>252</y>
-     <width>22</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Key:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>321</x>
-     <y>285</y>
-     <width>73</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Pamphlet Sent:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_10">
-   <property name="geometry">
-    <rect>
-     <x>321</x>
-     <y>318</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string># Basic Orders:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_11">
-   <property name="geometry">
-    <rect>
-     <x>321</x>
-     <y>350</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string># Business Orders:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_12">
-   <property name="geometry">
-    <rect>
-     <x>321</x>
-     <y>383</y>
-     <width>111</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string># Enterprise Orders:</string>
-   </property>
-  </widget>
   <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>441</x>
-     <y>121</y>
-     <width>261</width>
-     <height>281</height>
+     <x>320</x>
+     <y>90</y>
+     <width>351</width>
+     <height>331</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Customer's Info:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>Name:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
      <widget class="QLabel" name="selectedCustomerName">
       <property name="text">
        <string/>
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>Streetname:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
      <widget class="QLabel" name="selectedCustomerStreetname">
       <property name="text">
        <string/>
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>City, State Zip:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
      <widget class="QLabel" name="selectedCustomerCityStateZip">
       <property name="text">
        <string/>
@@ -295,20 +193,41 @@
      </widget>
     </item>
     <item row="4" column="0">
-     <widget class="QLabel" name="selectedCustomerKey">
+     <widget class="QLabel" name="label_6">
       <property name="text">
-       <string/>
+       <string>Interest:</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="0">
+    <item row="4" column="1">
      <widget class="QLabel" name="selectedCustomerInterest">
       <property name="text">
        <string/>
       </property>
      </widget>
     </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Key:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QLabel" name="selectedCustomerKey">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
     <item row="6" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Pamphlet Sent:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
      <widget class="QLabel" name="selectedCustomerPamphlet">
       <property name="text">
        <string/>
@@ -316,6 +235,13 @@
      </widget>
     </item>
     <item row="7" column="0">
+     <widget class="QLabel" name="label_10">
+      <property name="text">
+       <string># Basic Orders:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
      <widget class="QLabel" name="selectedBasicOrders">
       <property name="text">
        <string/>
@@ -323,6 +249,13 @@
      </widget>
     </item>
     <item row="8" column="0">
+     <widget class="QLabel" name="label_11">
+      <property name="text">
+       <string># Business Orders:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
      <widget class="QLabel" name="selectedBusinessOrders">
       <property name="text">
        <string/>
@@ -330,7 +263,28 @@
      </widget>
     </item>
     <item row="9" column="0">
+     <widget class="QLabel" name="label_12">
+      <property name="text">
+       <string># Enterprise Orders:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1">
      <widget class="QLabel" name="selectedEnterpriseOrders">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="0">
+     <widget class="QLabel" name="label_13">
+      <property name="text">
+       <string>Total Spent:                                  $</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1">
+     <widget class="QLabel" name="selectedTotalSpent">
       <property name="text">
        <string/>
       </property>

@@ -9,7 +9,6 @@ adminwindow::adminwindow(QWidget *parent) :
     ui(new Ui::adminwindow)
 {
     ui->setupUi(this);
-
     customerNames = dbManager::instance().getCustomerNames();
     ui->listWidget->addItems(customerNames);
     ui->labelTotalCustomersNumber->setText(QString("%1").arg(ui->listWidget->count()));
@@ -94,6 +93,9 @@ void adminwindow::on_listWidget_itemClicked(QListWidgetItem *item)
 
     int numEnterpriseOrders = dbManager::instance().getNumberEnterpriseOrders(item->text());
     ui->selectedEnterpriseOrders->setText(QString::number(numEnterpriseOrders));
+
+    int total = dbManager::instance().getBasicSpent(item->text()) + dbManager::instance().getBusinessSpent(item->text()) + dbManager::instance().getEnterpriseSpent(item->text());
+    ui->selectedTotalSpent->setText(QString::number(total));
 }
 
 /********************************************//**
@@ -113,6 +115,7 @@ void adminwindow::on_DeleteButton_clicked()
         ui->selectedBasicOrders->clear();
         ui->selectedBusinessOrders->clear();
         ui->selectedEnterpriseOrders->clear();
+        ui->selectedTotalSpent->clear();
         updateCustomerList();
     }
     else
@@ -128,9 +131,4 @@ void adminwindow::on_DeleteButton_clicked()
 void adminwindow::on_comboBox_currentIndexChanged(int n)
 {
     updateCustomerList();
-}
-
-void adminwindow::calculateTotal()
-{
-
 }

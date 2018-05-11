@@ -123,7 +123,6 @@ QString dbManager::identifyFromLogin(QString user, QString pass)
         nameIndex = query.record().indexOf("name");
         while(query.next())
         {
-            qDebug() << "nameIndex " << nameIndex;
             customerIdentity = query.value(nameIndex).toString();
         }
         qDebug() << "Got identity from login info " << customerIdentity;
@@ -361,6 +360,86 @@ bool dbManager::removeCustomer(QString customerName)
     return success;
 }
 
+int dbManager::getBasicSpent(QString customerName)
+{
+    QSqlQuery query;
+    QString customer_name = customerName;
+    int basicIndex;
+    int total_basic;
+    int total;
+
+    query.prepare("SELECT basic_orders FROM customer_list WHERE name = '"+customer_name+"'");
+    if(query.exec())
+    {
+        basicIndex = query.record().indexOf("basic_orders");
+        while(query.next())
+        {
+            total_basic = query.value(basicIndex).toInt();
+            total = (total_basic * 100);
+        }
+        qDebug() << "Got total spent on basic package: " << total <<  " from database.";
+    }
+    else
+    {
+        qDebug() << "Could not get basic package total spent";
+    }
+
+    return total;
+}
+
+int dbManager::getBusinessSpent(QString customerName)
+{
+    QSqlQuery query;
+    QString customer_name = customerName;
+    int businessIndex;
+    int total_business;
+    int total;
+
+    query.prepare("SELECT business_orders FROM customer_list WHERE name = '"+customer_name+"'");
+    if(query.exec())
+    {
+        businessIndex = query.record().indexOf("business_orders");
+        while(query.next())
+        {
+            total_business = query.value(businessIndex).toInt();
+            total = (total_business * 200);
+        }
+        qDebug() << "Got total spent on business package: " << total <<  " from database.";
+    }
+    else
+    {
+        qDebug() << "Could not get business package total spent";
+    }
+    return total;
+}
+
+int dbManager::getEnterpriseSpent(QString customerName)
+{
+    QSqlQuery query;
+    QString customer_name = customerName;
+    int enterpriseIndex;
+    int total_enterprise;
+    int total;
+
+    query.prepare("SELECT enterprise_orders FROM customer_list WHERE name = '"+customer_name+"'");
+    if(query.exec())
+    {
+        enterpriseIndex = query.record().indexOf("enterprise_orders");
+        while(query.next())
+        {
+            total_enterprise = query.value(enterpriseIndex).toInt();
+            total = (total_enterprise * 300);
+        }
+        qDebug() << "Got total spent on enterprise package:: " << total <<  " from database.";
+    }
+    else
+    {
+        qDebug() << "Could not get enterprise package total spent";
+    }
+
+    return total;
+}
+
 /********************************************//**
  *  Procedure for populating customer list.
  ***********************************************/
@@ -425,19 +504,58 @@ bool dbManager::addTestimony(QString testimony)
     return success;
 }
 
-bool dbManager::submitOrder(QString orderType, QString customer_name)
+bool dbManager::submitBasicOrder(QString customer_name)
 {
     QSqlQuery query;
     bool success;
-    query.prepare("UPDATE customer_list SET '"+orderType+"' = '"+orderType+"' + 1 WHERE name = '"+customer_name+"'");
+    query.prepare("UPDATE customer_list SET basic_orders = basic_orders + 1 WHERE name = '"+customer_name+"'");
 
     if(query.exec())
     {
+        qDebug() << "Submitted order for basic_orders from customer: " << customer_name;
         success = true;
     }
     else
     {
-        qDebug() << "Failed to submit order" << query.lastError();
+        qDebug() << "Failed to submit basic order" << query.lastError();
+        success = false;
+    }
+    return success;
+}
+
+bool dbManager::submitBusinessOrder(QString customer_name)
+{
+    QSqlQuery query;
+    bool success;
+    query.prepare("UPDATE customer_list SET business_orders = business_orders + 1 WHERE name = '"+customer_name+"'");
+
+    if(query.exec())
+    {
+        qDebug() << "Submitted order for business_orders from customer: " << customer_name;
+        success = true;
+    }
+    else
+    {
+        qDebug() << "Failed to submit business_orders " << query.lastError();
+        success = false;
+    }
+    return success;
+}
+
+bool dbManager::submitEnterpriseOrder(QString customer_name)
+{
+    QSqlQuery query;
+    bool success;
+    query.prepare("UPDATE customer_list SET enterprise_orders = enterprise_orders + 1 WHERE name = '"+customer_name+"'");
+
+    if(query.exec())
+    {
+        qDebug() << "Submitted order for enterprise_orders from customer: " << customer_name;
+        success = true;
+    }
+    else
+    {
+        qDebug() << "Failed to submit enterprise_orders" << query.lastError();
         success = false;
     }
     return success;
