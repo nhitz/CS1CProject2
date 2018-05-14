@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "dialogcustomer.h"
 #include "dialogadmin.h"
+#include "helpoption.h"
+#include "ui_helpoption.h"
 
 /********************************************//**
  *  Constructor for the main window widget.
@@ -50,3 +52,12 @@ void MainWindow::on_adminLoginButton_clicked()
 }
 
 
+
+void MainWindow::on_commandLinkButton_2_clicked()
+{
+    helpOption helpObject;
+
+    helpObject.setModal(true);
+    helpObject.exec();
+
+}

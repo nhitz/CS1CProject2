@@ -35,7 +35,8 @@ SOURCES += \
     addcustomerwindow.cpp \
     confirmbasic.cpp \
     confirmbusiness.cpp \
-    confirmenterprise.cpp
+    confirmenterprise.cpp \
+    helpoption.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -48,7 +49,8 @@ HEADERS += \
     addcustomerwindow.h \
     confirmbasic.h \
     confirmbusiness.h \
-    confirmenterprise.h
+    confirmenterprise.h \
+    helpoption.h
 
 FORMS += \
         mainwindow.ui \
@@ -59,6 +61,7 @@ FORMS += \
     addcustomerwindow.ui \
     confirmbasic.ui \
     confirmbusiness.ui \
-    confirmenterprise.ui
+    confirmenterprise.ui \
+    helpoption.ui
 
 RESOURCES = icybersec.qrc

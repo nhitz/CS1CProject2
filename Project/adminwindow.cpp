@@ -96,6 +96,7 @@ void adminwindow::on_listWidget_itemClicked(QListWidgetItem *item)
 
     int total = dbManager::instance().getBasicSpent(item->text()) + dbManager::instance().getBusinessSpent(item->text()) + dbManager::instance().getEnterpriseSpent(item->text());
     ui->selectedTotalSpent->setText(QString::number(total));
+
 }
 
 /********************************************//**
@@ -132,3 +133,5 @@ void adminwindow::on_comboBox_currentIndexChanged(int n)
 {
     updateCustomerList();
 }
+
+

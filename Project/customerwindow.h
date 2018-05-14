@@ -26,6 +26,7 @@ public:
   void setCustomer(QString name);
   QString getCustomer();
 
+
   ~CustomerWindow();
 
 private slots:
@@ -34,6 +35,8 @@ private slots:
   void on_enterpriseButton_clicked();
   void on_submitTestimonyButton_clicked();
   void on_logoutButton_clicked();
+
+ // void on_totalLabel_linkActivated(const QString &link);
 
 private:
   void updateOrders();

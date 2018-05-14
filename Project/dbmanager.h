@@ -27,6 +27,7 @@ private:
     ~dbManager();
 
     QSqlDatabase iCybSecdb;
+    int customerTotal;
     //QString customerIdentity;
 
 public:
@@ -69,6 +70,9 @@ public:
     int getNumberBasicOrders(QString customer_name);
     int getNumberBusinessOrders(QString customer_name);
     int getNumberEnterpriseOrders(QString customer_name);
+
+    int getCustomerTotal() const;
+    void setCustomerTotal(int value);
 };
 
 #endif // DBMANAGER_H

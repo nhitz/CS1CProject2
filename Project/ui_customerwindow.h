@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'customerwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.0
+** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,9 +10,12 @@
 #define UI_CUSTOMERWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextEdit>
@@ -231,29 +234,29 @@ public:
 
     void retranslateUi(QDialog *CustomerWindow)
     {
-        CustomerWindow->setWindowTitle(QApplication::translate("CustomerWindow", "Dialog", nullptr));
-        label_4->setText(QApplication::translate("CustomerWindow", "Please make order selection:", nullptr));
-        pamphletLabel->setText(QApplication::translate("CustomerWindow", "pamphletLabel", nullptr));
-        logoutButton->setText(QApplication::translate("CustomerWindow", "Logout", nullptr));
-        label->setText(QApplication::translate("CustomerWindow", "                     $200", nullptr));
-        businessButton->setText(QApplication::translate("CustomerWindow", "Order Business Package", nullptr));
-        label_2->setText(QApplication::translate("CustomerWindow", "                     $100", nullptr));
-        basicButton->setText(QApplication::translate("CustomerWindow", "Order Basic Package", nullptr));
-        label_3->setText(QApplication::translate("CustomerWindow", "                       $300", nullptr));
-        enterpriseButton->setText(QApplication::translate("CustomerWindow", "Order Enterprise Package", nullptr));
-        label_11->setText(QApplication::translate("CustomerWindow", "Welcome, ", nullptr));
+        CustomerWindow->setWindowTitle(QApplication::translate("CustomerWindow", "Dialog", Q_NULLPTR));
+        label_4->setText(QApplication::translate("CustomerWindow", "Please make order selection:", Q_NULLPTR));
+        pamphletLabel->setText(QApplication::translate("CustomerWindow", "pamphletLabel", Q_NULLPTR));
+        logoutButton->setText(QApplication::translate("CustomerWindow", "Logout", Q_NULLPTR));
+        label->setText(QApplication::translate("CustomerWindow", "                     $200", Q_NULLPTR));
+        businessButton->setText(QApplication::translate("CustomerWindow", "Order Business Package", Q_NULLPTR));
+        label_2->setText(QApplication::translate("CustomerWindow", "                     $100", Q_NULLPTR));
+        basicButton->setText(QApplication::translate("CustomerWindow", "Order Basic Package", Q_NULLPTR));
+        label_3->setText(QApplication::translate("CustomerWindow", "                       $300", Q_NULLPTR));
+        enterpriseButton->setText(QApplication::translate("CustomerWindow", "Order Enterprise Package", Q_NULLPTR));
+        label_11->setText(QApplication::translate("CustomerWindow", "Welcome, ", Q_NULLPTR));
         customerNameLabel->setText(QString());
-        label_5->setText(QApplication::translate("CustomerWindow", "Liked our products? Leave us a testimonial!", nullptr));
-        submitTestimonyButton->setText(QApplication::translate("CustomerWindow", "Submit", nullptr));
+        label_5->setText(QApplication::translate("CustomerWindow", "Liked our products? Leave us a testimonial!", Q_NULLPTR));
+        submitTestimonyButton->setText(QApplication::translate("CustomerWindow", "Submit", Q_NULLPTR));
         thanksLabel->setText(QString());
-        label_6->setText(QApplication::translate("CustomerWindow", "Order Summary:", nullptr));
-        label_7->setText(QApplication::translate("CustomerWindow", "Basic Package:", nullptr));
+        label_6->setText(QApplication::translate("CustomerWindow", "Order Summary:", Q_NULLPTR));
+        label_7->setText(QApplication::translate("CustomerWindow", "Basic Package:", Q_NULLPTR));
         numBasicLabel->setText(QString());
-        label_8->setText(QApplication::translate("CustomerWindow", "Business Package:", nullptr));
+        label_8->setText(QApplication::translate("CustomerWindow", "Business Package:", Q_NULLPTR));
         numBusinessLabel->setText(QString());
-        label_9->setText(QApplication::translate("CustomerWindow", "Enterprise Package:", nullptr));
+        label_9->setText(QApplication::translate("CustomerWindow", "Enterprise Package:", Q_NULLPTR));
         numEnterpriseLabel->setText(QString());
-        label_10->setText(QApplication::translate("CustomerWindow", "Total:", nullptr));
+        label_10->setText(QApplication::translate("CustomerWindow", "Total:", Q_NULLPTR));
         totalLabel->setText(QString());
     } // retranslateUi
 

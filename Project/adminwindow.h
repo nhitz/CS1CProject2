@@ -31,6 +31,8 @@ private slots:
     void on_DeleteButton_clicked();
     void on_comboBox_currentIndexChanged(int n);
 
+    void on_selectedTotalSpent_linkActivated(const QString &link);
+
 private:
     Ui::adminwindow *ui;
     QStringList customerNames;

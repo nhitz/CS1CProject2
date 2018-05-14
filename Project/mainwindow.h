@@ -26,6 +26,8 @@ private slots:
   void on_customerLoginButton_clicked();
   void on_adminLoginButton_clicked();
 
+  void on_commandLinkButton_2_clicked();
+
 private:
   Ui::MainWindow *ui;
 };

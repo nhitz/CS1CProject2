@@ -14,6 +14,7 @@ CustomerWindow::CustomerWindow(QWidget *parent, QString name) :
     ui->numBasicLabel->setText(QString::number(0));
     ui->numBusinessLabel->setText(QString::number(0));
     ui->numEnterpriseLabel->setText(QString::number(0));
+    ui->totalLabel->setText(QString::number(0));
 
     QPixmap thePamphlet(":pamphlet.jpeg");
     ui->pamphletLabel->setPixmap(thePamphlet.scaled(792,612,Qt::KeepAspectRatio));
@@ -45,6 +46,9 @@ void CustomerWindow::on_basicButton_clicked()
     orderBasicWin.setModal(true);
     orderBasicWin.exec();
     updateOrders();
+
+    int total = dbManager::instance().getBasicSpent(customerName) + dbManager::instance().getBusinessSpent(customerName) + dbManager::instance().getEnterpriseSpent(customerName);
+    ui->totalLabel->setText(QString::number(total));
 }
 
 void CustomerWindow::on_businessButton_clicked()
@@ -55,6 +59,9 @@ void CustomerWindow::on_businessButton_clicked()
     orderBusinessWin.setModal(true);
     orderBusinessWin.exec();
     updateOrders();
+
+    int total = dbManager::instance().getBasicSpent(customerName) + dbManager::instance().getBusinessSpent(customerName) + dbManager::instance().getEnterpriseSpent(customerName);
+    ui->totalLabel->setText(QString::number(total));
 }
 
 void CustomerWindow::on_enterpriseButton_clicked()
@@ -65,6 +72,9 @@ void CustomerWindow::on_enterpriseButton_clicked()
     orderEnterpriseWin.setModal(true);
     orderEnterpriseWin.exec();
     updateOrders();
+
+    int total = dbManager::instance().getBasicSpent(customerName) + dbManager::instance().getBusinessSpent(customerName) + dbManager::instance().getEnterpriseSpent(customerName);
+    ui->totalLabel->setText(QString::number(total));
 }
 
 void CustomerWindow::on_submitTestimonyButton_clicked()
@@ -89,4 +99,14 @@ void CustomerWindow::updateOrders()
     ui->numBasicLabel->setText(QString::number(dbManager::instance().getNumberBasicOrders(customerName)));
     ui->numBusinessLabel->setText(QString::number(dbManager::instance().getNumberBusinessOrders(customerName)));
     ui->numEnterpriseLabel->setText(QString::number(dbManager::instance().getNumberEnterpriseOrders(customerName)));
+
+
+
 }
+
+
+//void CustomerWindow::on_totalLabel_linkActivated(const QString &link)
+//{
+  //  int total = dbManager::instance().getBasicSpent(item->link()) + dbManager::instance().getBusinessSpent(item->link()) + dbManager::instance().getEnterpriseSpent(item->link());
+    //ui->totalLabel->setText(QString::number(total));//
+//}

@@ -37,6 +37,16 @@ dbManager::~dbManager()
     qDebug() << "Destroying dbManager";
 }
 
+int dbManager::getCustomerTotal() const
+{
+    return customerTotal;
+}
+
+void dbManager::setCustomerTotal(int value)
+{
+    customerTotal = value;
+}
+
 /********************************************//**
  *  Create an instance of the Database Manager.
  ***********************************************/
@@ -507,58 +517,103 @@ bool dbManager::addTestimony(QString testimony)
 bool dbManager::submitBasicOrder(QString customer_name)
 {
     QSqlQuery query;
-    bool success;
+    QSqlQuery query2;
+    bool successUpdateOrder;
+    bool successUpdateTotal;
     query.prepare("UPDATE customer_list SET basic_orders = basic_orders + 1 WHERE name = '"+customer_name+"'");
 
     if(query.exec())
     {
         qDebug() << "Submitted order for basic_orders from customer: " << customer_name;
-        success = true;
+        successUpdateOrder = true;
     }
     else
     {
         qDebug() << "Failed to submit basic order" << query.lastError();
-        success = false;
+        successUpdateOrder = false;
     }
-    return success;
+
+    query2.prepare("UPDATE customer_list SET total_spent = total_spent + 100 WHERE name = '"+customer_name+"'");
+
+    if(query2.exec())
+    {
+        qDebug() << "Updated customer total for customer: " << customer_name;
+        successUpdateTotal = true;
+    }
+    else
+    {
+        qDebug() << "Failed to update customer's total" << query2.lastError();
+        successUpdateTotal = false;
+    }
+    return successUpdateOrder && successUpdateTotal;
 }
 
 bool dbManager::submitBusinessOrder(QString customer_name)
 {
     QSqlQuery query;
-    bool success;
+    QSqlQuery query2;
+    bool successUpdateOrder;
+    bool successUpdateTotal;
     query.prepare("UPDATE customer_list SET business_orders = business_orders + 1 WHERE name = '"+customer_name+"'");
 
     if(query.exec())
     {
         qDebug() << "Submitted order for business_orders from customer: " << customer_name;
-        success = true;
+        successUpdateOrder = true;
     }
     else
     {
         qDebug() << "Failed to submit business_orders " << query.lastError();
-        success = false;
+        successUpdateOrder = false;
     }
-    return success;
+
+    query2.prepare("UPDATE customer_list SET total_spent = total_spent + 200 WHERE name = '"+customer_name+"'");
+
+    if(query2.exec())
+    {
+        qDebug() << "Updated customer total for customer: " << customer_name;
+        successUpdateTotal = true;
+    }
+    else
+    {
+        qDebug() << "Failed to update customer's total" << query2.lastError();
+        successUpdateTotal = false;
+    }
+    return successUpdateOrder && successUpdateTotal;
 }
 
 bool dbManager::submitEnterpriseOrder(QString customer_name)
 {
     QSqlQuery query;
-    bool success;
+    QSqlQuery query2;
+    bool successUpdateOrder;
+    bool successUpdateTotal;
     query.prepare("UPDATE customer_list SET enterprise_orders = enterprise_orders + 1 WHERE name = '"+customer_name+"'");
 
     if(query.exec())
     {
         qDebug() << "Submitted order for enterprise_orders from customer: " << customer_name;
-        success = true;
+        successUpdateOrder = true;
     }
     else
     {
         qDebug() << "Failed to submit enterprise_orders" << query.lastError();
-        success = false;
+        successUpdateOrder = false;
     }
-    return success;
+
+    query2.prepare("UPDATE customer_list SET total_spent = total_spent + 300 WHERE name = '"+customer_name+"'");
+
+    if(query2.exec())
+    {
+        qDebug() << "Updated customer total for customer: " << customer_name;
+        successUpdateTotal = true;
+    }
+    else
+    {
+        qDebug() << "Failed to update customer's total" << query2.lastError();
+        successUpdateTotal = false;
+    }
+    return successUpdateOrder && successUpdateTotal;
 }
 
 int dbManager::getNumberBasicOrders(QString customer_name)
