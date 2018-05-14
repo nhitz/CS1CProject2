@@ -41,15 +41,13 @@ public:
     QPushButton *enterpriseButton;
     QLabel *label_11;
     QLabel *customerNameLabel;
-    QWidget *widget;
+    QWidget *layoutWidget3;
     QGridLayout *gridLayout_2;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_5;
-    QLabel *label_5;
     QTextEdit *testimonialText;
+    QLabel *label_5;
     QPushButton *submitTestimonyButton;
     QLabel *thanksLabel;
-    QWidget *widget1;
+    QWidget *layoutWidget4;
     QGridLayout *gridLayout;
     QLabel *label_6;
     QLabel *label_7;
@@ -145,94 +143,82 @@ public:
         customerNameLabel->setObjectName(QStringLiteral("customerNameLabel"));
         customerNameLabel->setGeometry(QRect(150, 10, 331, 31));
         customerNameLabel->setFont(font);
-        widget = new QWidget(CustomerWindow);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(660, 20, 281, 351));
-        gridLayout_2 = new QGridLayout(widget);
+        layoutWidget3 = new QWidget(CustomerWindow);
+        layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
+        layoutWidget3->setGeometry(QRect(660, 20, 281, 351));
+        gridLayout_2 = new QGridLayout(layoutWidget3);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButton_4 = new QPushButton(widget);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setFont(font1);
+        testimonialText = new QTextEdit(layoutWidget3);
+        testimonialText->setObjectName(QStringLiteral("testimonialText"));
 
-        gridLayout_2->addWidget(pushButton_4, 0, 0, 1, 1);
+        gridLayout_2->addWidget(testimonialText, 1, 0, 1, 3);
 
-        pushButton_5 = new QPushButton(widget);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setFont(font1);
-
-        gridLayout_2->addWidget(pushButton_5, 0, 1, 1, 2);
-
-        label_5 = new QLabel(widget);
+        label_5 = new QLabel(layoutWidget3);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setFont(font1);
 
-        gridLayout_2->addWidget(label_5, 1, 0, 1, 3);
+        gridLayout_2->addWidget(label_5, 0, 0, 1, 3);
 
-        testimonialText = new QTextEdit(widget);
-        testimonialText->setObjectName(QStringLiteral("testimonialText"));
-
-        gridLayout_2->addWidget(testimonialText, 2, 0, 1, 3);
-
-        submitTestimonyButton = new QPushButton(widget);
+        submitTestimonyButton = new QPushButton(layoutWidget3);
         submitTestimonyButton->setObjectName(QStringLiteral("submitTestimonyButton"));
 
-        gridLayout_2->addWidget(submitTestimonyButton, 3, 0, 1, 2);
+        gridLayout_2->addWidget(submitTestimonyButton, 2, 0, 1, 2);
 
-        thanksLabel = new QLabel(widget);
+        thanksLabel = new QLabel(layoutWidget3);
         thanksLabel->setObjectName(QStringLiteral("thanksLabel"));
 
-        gridLayout_2->addWidget(thanksLabel, 3, 2, 1, 1);
+        gridLayout_2->addWidget(thanksLabel, 2, 2, 1, 1);
 
-        widget1 = new QWidget(CustomerWindow);
-        widget1->setObjectName(QStringLiteral("widget1"));
-        widget1->setGeometry(QRect(671, 391, 231, 141));
-        gridLayout = new QGridLayout(widget1);
+        layoutWidget4 = new QWidget(CustomerWindow);
+        layoutWidget4->setObjectName(QStringLiteral("layoutWidget4"));
+        layoutWidget4->setGeometry(QRect(671, 391, 231, 141));
+        gridLayout = new QGridLayout(layoutWidget4);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        label_6 = new QLabel(widget1);
+        label_6 = new QLabel(layoutWidget4);
         label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setFont(font1);
 
         gridLayout->addWidget(label_6, 0, 0, 1, 1);
 
-        label_7 = new QLabel(widget1);
+        label_7 = new QLabel(layoutWidget4);
         label_7->setObjectName(QStringLiteral("label_7"));
 
         gridLayout->addWidget(label_7, 1, 0, 1, 1);
 
-        numBasicLabel = new QLabel(widget1);
+        numBasicLabel = new QLabel(layoutWidget4);
         numBasicLabel->setObjectName(QStringLiteral("numBasicLabel"));
 
         gridLayout->addWidget(numBasicLabel, 1, 1, 1, 2);
 
-        label_8 = new QLabel(widget1);
+        label_8 = new QLabel(layoutWidget4);
         label_8->setObjectName(QStringLiteral("label_8"));
 
         gridLayout->addWidget(label_8, 2, 0, 1, 1);
 
-        numBusinessLabel = new QLabel(widget1);
+        numBusinessLabel = new QLabel(layoutWidget4);
         numBusinessLabel->setObjectName(QStringLiteral("numBusinessLabel"));
 
         gridLayout->addWidget(numBusinessLabel, 2, 1, 1, 2);
 
-        label_9 = new QLabel(widget1);
+        label_9 = new QLabel(layoutWidget4);
         label_9->setObjectName(QStringLiteral("label_9"));
 
         gridLayout->addWidget(label_9, 3, 0, 1, 1);
 
-        numEnterpriseLabel = new QLabel(widget1);
+        numEnterpriseLabel = new QLabel(layoutWidget4);
         numEnterpriseLabel->setObjectName(QStringLiteral("numEnterpriseLabel"));
 
         gridLayout->addWidget(numEnterpriseLabel, 3, 1, 1, 2);
 
-        label_10 = new QLabel(widget1);
+        label_10 = new QLabel(layoutWidget4);
         label_10->setObjectName(QStringLiteral("label_10"));
         label_10->setFont(font1);
 
         gridLayout->addWidget(label_10, 4, 0, 1, 1);
 
-        totalLabel = new QLabel(widget1);
+        totalLabel = new QLabel(layoutWidget4);
         totalLabel->setObjectName(QStringLiteral("totalLabel"));
 
         gridLayout->addWidget(totalLabel, 4, 1, 1, 2);
@@ -257,8 +243,6 @@ public:
         enterpriseButton->setText(QApplication::translate("CustomerWindow", "Order Enterprise Package", nullptr));
         label_11->setText(QApplication::translate("CustomerWindow", "Welcome, ", nullptr));
         customerNameLabel->setText(QString());
-        pushButton_4->setText(QApplication::translate("CustomerWindow", "Help", nullptr));
-        pushButton_5->setText(QApplication::translate("CustomerWindow", "Request Pamphlet", nullptr));
         label_5->setText(QApplication::translate("CustomerWindow", "Liked our products? Leave us a testimonial!", nullptr));
         submitTestimonyButton->setText(QApplication::translate("CustomerWindow", "Submit", nullptr));
         thanksLabel->setText(QString());

@@ -210,7 +210,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>660</x>
@@ -220,33 +220,10 @@
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0">
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Help</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1" colspan="2">
-     <widget class="QPushButton" name="pushButton_5">
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Request Pamphlet</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="0" colspan="3">
+     <widget class="QTextEdit" name="testimonialText"/>
+    </item>
+    <item row="0" column="0" colspan="3">
      <widget class="QLabel" name="label_5">
       <property name="font">
        <font>
@@ -259,17 +236,14 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0" colspan="3">
-     <widget class="QTextEdit" name="testimonialText"/>
-    </item>
-    <item row="3" column="0" colspan="2">
+    <item row="2" column="0" colspan="2">
      <widget class="QPushButton" name="submitTestimonyButton">
       <property name="text">
        <string>Submit</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="2">
+    <item row="2" column="2">
      <widget class="QLabel" name="thanksLabel">
       <property name="text">
        <string/>
@@ -278,7 +252,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>671</x>
