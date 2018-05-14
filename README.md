@@ -1,2 +1,4 @@
-# Totally-not-runssia
-We the best 
+icybersecurity readme:
+
+Q: How to use?
+A: Don't
